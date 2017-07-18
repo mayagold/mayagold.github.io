@@ -1,0 +1,134 @@
+body {
+  font-family: "Comfortaa", cursive;
+}
+
+.modal {
+   background: black;
+}
+
+.modal-1 {
+    background: black;
+    text-align: center;
+    animation: colorRotate 3s linear infinite;
+    max-height: 800px;
+  }
+
+  #intro-image {
+    display: block;
+    margin: 0 auto;
+    padding-top: 80px;
+    z-index: -1;
+  }
+
+  #intro-text {
+    background: rgba(0,0,0,.3);
+    border: 3px solid rgba(255,255,255,.3);
+    color: white;
+    display: block;
+    position: relative;
+    transform: translateY(-550px);
+    margin: 0 60px;
+    font-size: 20px;
+    padding: 40px;
+  }
+
+  #start-button {
+    font-family: "Comfortaa", cursive;
+    font-size: 20px;
+    background-color: #00ffdf;
+    padding: 20px;
+    transform: translateY(-450px);
+    margin: 0 auto;
+    display: block;
+
+  }
+
+.mushroom-container {
+  display: none;
+}
+
+h2 {
+  text-align: center;
+  display: block;
+}
+
+h3 {
+  text-align: center;
+  display: block;
+}
+
+.poisonous {
+
+  /*animation-name: slideSlow;
+  animation-duration: 10s;
+  animation-iteration-count: 3;*/
+  display: inline-block;
+  background: #df00ff;
+}
+
+.normal {
+  display: inline-block;
+  background:#5f00ff;
+}
+
+.magic {
+  display: inline-block;
+  background: #00ff5f;
+}
+
+
+/*ideas for moving mushrooms ... learn more about css animations */
+
+  @keyframes colorRotate {
+    100% {
+      -webkit-filter: hue-rotate(360deg);
+    }
+  }
+
+  /*@keyframes slideSlow {
+    75% {
+      margin-left: 25%;
+    }
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }*/
+
+
+
+  /*@@keyframes slideMed {
+    75% {
+      margin-left: 55%;
+    }
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }
+
+  @@keyframes colorFlash {
+  25% {background-color: red}
+  50% {background: blue}
+  75% {background: yellow}
+  100% {background: purple}
+  }*/
+
+
+
+
+
+
+/*Colors*/
+
+/*purple: #df00ff */
+/*yellow: #ffdf00*/
+/*pink: #ff00a0
+teal: #00ffdf
+indigo: #5f00ff
+green: #00ff5f
+blue: #0020ff*/

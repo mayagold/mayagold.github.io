@@ -1,1 +1,64 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Color Your Universe</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <script
+    src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="app.js"> </script>
+  </head>
+  <body>
+
+<!-- intro modal explains the game  -->
+
+      <div class="modal-1">
+        <img src="images/mushroom.png" id="intro-image"/>
+        <p id="intro-text">Mr. Fun Guy lives in a dreary, dull computer universe where everything is colored in shades of grey. On a quest to find color, he recently discovered a great secret! This universe is full of magic mushrooms. When you eat them, you develop the power to see in color. Help Mr. Fun Guy eat all the mushrooms and bring his world alive one color at a time.
+          <br><br>But be careful! Some of the mushrooms out there are poisonous, and some of them don’t do anything! If you eat a poisonous mushroom, you will lose some of your power, and if you lose too much power, you won’t be able to see anything at all.
+            <br><br>Are you ready to color the universe?!</p>
+        <button id="start-button">Start Playing!</button>
+      </div>
+
+
+<!-- div container -->
+    <div class="container">
+
+<!-- hidden background divs  -->
+      <div class="yellow"></div>
+      <div class="pink"></div>
+      <div class="purple"></div>
+      <div class="green"></div>
+      <div class="blue"></div>
+      <div class="indigo"></div>
+      <div class="teal"></div>
+
+      <h2>Power: 5</h2>
+      <h3>Timer: 30 sec</h3>
+
+<!-- div container for the actual play space - where the mushrooms move around and user interacts with them - construct with jquery. The power (points) and timer for each round are displayed as well -->
+      <div class="mushroom-container">
+      </div>
+    </div>
+
+  <div class="modal-repeat">
+    You are being very cautious—too cautious! You haven’t eaten enough magic mushrooms yet to reveal any colors. Try this round again. Mr. Fun Guy needs your help!
+  </div>
+
+  <div class="modal-next-round">
+    You are becoming a great mushroom forager! You've collected enough magic mushrooms to see a new color! Continue on to the next round and keep looking for more mushrooms to get even better color vision.
+  </div>
+
+  <div class="modal-win">
+    WOW! You did it! Look how colorful the world has become! Thank you for helping Mr. Fun Guy on his courageous adventure! Now his world is a beautiful place.
+  </div>
+
+  <div class="modal-lose">
+    OH NO! You weren’t careful enough! You’ve eaten too many poisonous mushrooms and gone blind. Mr. Fun Guy will have to continue on without you, and you won’t get to see the colorful universe.
+  </div>
+
+  </body>
+</html>
