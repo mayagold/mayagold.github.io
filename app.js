@@ -98,7 +98,7 @@ $(() => {
         shroom.css('max-height', '50px');
         shroom.css('animation-name', 'colorRotate');
         shroom.css('animation-duration', '15s');
-        shroom.css('animation-iteration-count', '2')
+        shroom.css('animation-iteration-count', '2');
         const left = (Math.random()*1000) + 'px';
         const top = (Math.random()*500) + 'px';
         // console.log(top);
@@ -141,7 +141,23 @@ $(() => {
       $('#modal-next-round').css('display', 'block');
       eventHandlers.nextRound();
     },
-  }
+    roundAnimation(round) {
+      if (round===1){
+        console.log('called');
+        // $('.poisonous').css('animation-name', 'slideSlow');
+        // $('.poisonous').css('animation-duration', '15s');
+        // $('.poisonous').css('animation-iteration-count', '2');
+      } else {
+        console.log('working');
+      }
+    //   else if (round===1){}
+    //   else if (round===1){}
+    //   else if (round===1){}
+    //   else if (round===1){}
+    //   else if (round===1){}
+    //   else if (round===1){}
+    // }
+  } }
 
 // the actual function that starts a new round
 
@@ -151,6 +167,7 @@ $(() => {
     round.generateShrooms(round.roundNumber*20);
     round.setTimer();
     eventHandlers.clickShrooms();
+    round.roundAnimation(round.roundNumber);
   }
 
 // check whether user can move on to the next round
