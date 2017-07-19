@@ -14,7 +14,7 @@ body {
     margin: 30px;
     text-align: center;
     color: white;
-    padding: 30px;
+    padding: 20px;
   }
 
   .modal * {
@@ -23,10 +23,9 @@ body {
     flex-wrap: wrap;
   }
 
-  /*.modal-image {
-    max-height: 50%;
-    max-width: 80%;
-  }*/
+  p {
+    padding-top: 20px;
+  }
 
   .start-button {
     font-family: "Comfortaa", cursive;
@@ -46,20 +45,20 @@ body {
  }
 
 #modal-repeat {
-  display: none;
+  /*display: none;*/
   height: 600px;
 }
 
 #modal-next-round {
-  display: none;
+  /*display: none;*/
 }
 
 #modal-win {
-  display: none;
+  /*display: none;*/
 }
 
 #modal-lose {
-  display: none;
+  /*display: none;*/
 }
 
 .game-container {
