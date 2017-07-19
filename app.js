@@ -38,7 +38,10 @@ $(() => {
       $('img').on('click', (e) => {
         if ($(e.currentTarget).attr('class') === 'poisonous') {
           score--;
-          $(e.currentTarget).delay(200).fadeOut();
+          $(e.currentTarget).css('animation-name', 'vibrate');
+          $(e.currentTarget).css('animation-duration', '.2s');
+          $(e.currentTarget).css('animation-iteration-count', '20');
+          $(e.currentTarget).delay(1700).fadeOut();
           // alert("Be careful! That one was poisonous.")
           $('#show-power').text('Power: ' + score);
           console.log('lose point');

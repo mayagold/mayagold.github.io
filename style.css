@@ -126,9 +126,23 @@ h3 {
       transform: rotate(3600deg);
       filter: hue-rotate(360deg);
       }
-
   }
 
+  @keyframes vibrate {
+    25% {
+      transform: translateX(6px);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+    75% {
+      transform: translateX(6px);
+    }
+    100% {
+      transform: translateY(6px);
+      filter: hue-rotate(360deg);
+    }
+  }
 
   /*@@keyframes slideMed {
     75% {
