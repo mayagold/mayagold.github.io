@@ -6,8 +6,7 @@
 
 // add animations to mushrooms so that they move around the page
 // make the timer look cool / add animation
-// fix restart button bug
-// move score to modals
+// move score and to modals
 
 
 // JQUERY WINDOW ONLOAD
@@ -157,6 +156,7 @@ $(() => {
     },
     // shows the repeat round modal
     roundRepeat() {
+      $('#repeat-button').html('Try Round ' + round.roundNumber + " Again");
       $('.game-container').css('display', 'none');
       $('#modal-repeat').css('display', 'block');
       eventHandlers.repeatRound();
@@ -164,6 +164,7 @@ $(() => {
     // shows the next round modal
     roundNext() {
       round.roundNumber++;
+      $('#next-button').html('Move On To Round ' + round.roundNumber + "!");
       $('.game-container').css('display', 'none');
       $('#modal-next-round').css('display', 'block');
       eventHandlers.nextRound();
