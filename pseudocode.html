@@ -46,35 +46,3 @@ checkForWin:
       if points > win points:
           win modal
           colorRotate background looks dope (hopefully) -->
-
-
-const roundRepeat = () => {
-  $('.game-container').css('display', 'none');
-  $('#modal-repeat').css('display', 'block');
-  eventHandlers.repeatRound();
-}
-
-const roundNext = () => {
-  round.roundNumber++;
-  $('.game-container').css('display', 'none');
-  $('#modal-next-round').css('display', 'block');
-  eventHandlers.nextRound();
-}
-
-
-
-          const checkForWin = () => {
-          if (score <= 0) {
-              $('.game-container').css('display', 'none');
-              $('#modal-lose').css('display', 'block');
-              eventHandlers.startGame();
-          }  else if ( ((round.roundNumber === 1) && (score < 10)) ||((round.roundNumber===2) && (score<20)) || ((round.roundNumber=== 3 ) && (score < 30)) || ((round.roundNumber===4 ) && (score < 40)) || ((round.roundNumber=== 5 ) && (score < 50))  || ((round.roundNumber===6 ) && (score < 60)) || ((round.roundNumber===7 ) && (score < 70)) )  {
-            roundRepeat();
-          } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 20) && (round.roundNumber===2)) || ((score >= 30) && (round.roundNumber===3)) || ((score >= 40) && (round.roundNumber===4)) || ((score >= 50) && (round.roundNumber===5)) || ((score >= 60) && (round.roundNumber===6)) ) {
-              roundNext();
-          } else if ((round.roundNumber===7) && (score >= 70)) {
-              $('.game-container').css('display', 'none');
-              $('#modal-win').css('display', 'block');
-              eventHandlers.startGame();
-            }
-          }

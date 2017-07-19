@@ -1,44 +1,39 @@
 body {
   font-family: "Comfortaa", cursive;
+  background-color: rgba(0,0,0,.7);
+  color: white;
 }
 
-
-
 .modal {
-    background: black;
-    text-align: center;
+    background: url('images/images-5.jpg');
+    border: 3px solid rgba(255,255,255,.8);
     animation: colorRotate 3s linear infinite;
+    font-size: 2.5vw;
     height: 600px;
-    width: 1000px;
-    margin: 30px
-  }
-
-  #intro-image {
-    display: block;
-    margin: 0 50px;
-    z-index: -1;
-    height: 400px;
-  }
-
-  #intro-text {
-    background: rgba(0,0,0,.3);
-    border: 3px solid rgba(255,255,255,.3);
+    width: 90%;
+    margin: 30px;
+    text-align: center;
     color: white;
-    display: block;
-    position:absolute;
-    transform: translateY(-350px);
-    margin: 0 60px;
-    font-size: 20px;
-    padding: 40px;
+    padding: 30px;
   }
+
+  .modal * {
+    display: flex;
+    vertical-align:middle;
+    flex-wrap: wrap;
+  }
+
+  /*.modal-image {
+    max-height: 50%;
+    max-width: 80%;
+  }*/
 
   .start-button {
     font-family: "Comfortaa", cursive;
     font-size: 20px;
     background-color: #00ffdf;
     padding: 20px;
-    margin: 60px auto;
-    display: block;
+    margin: 0 auto;
   }
 
   .go-button {
@@ -52,6 +47,7 @@ body {
 
 #modal-repeat {
   display: none;
+  height: 600px;
 }
 
 #modal-next-round {
@@ -100,7 +96,7 @@ h3 {
 
 .magic {
   display: inline-block;
-  /*background: #00ff5f;*/
+  background: #00ff5f;
 }
 
 

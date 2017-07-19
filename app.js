@@ -31,7 +31,7 @@ $(() => {
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
         setUpRound();
-        $('.start-button').off();
+
       });
     },
     // clicking on mushrooms -- changes the score based on their class
