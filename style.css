@@ -2,47 +2,46 @@ body {
   font-family: Comfortaa, cursive;
   background-color: rgba(0,0,0,1);
   color: rgba(255,255,255,.8);
-    /*font-weight: bolder;*/
 }
 
 .modal {
-    background: url('images/images-5.jpg');
-    border: 3px solid rgba(255,255,255,.8);
-    animation: colorRotate 3s linear infinite;
-    font-size: 2.5vw;
-    height: 600px;
-    width: 90%;
-    margin: 30px;
-    text-align: center;
-    color: white;
-    padding: 20px;
-  }
+  background: url('images/images-5.jpg');
+  border: 3px solid rgba(255,255,255,.8);
+  animation: colorRotate 3s linear infinite;
+  font-size: 2.5vw;
+  height: 600px;
+  width: 90%;
+  margin: 30px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
 
-  .modal * {
-    display: flex;
-    vertical-align:middle;
-    flex-wrap: wrap;
-  }
+/*.modal * {
+  display: flex;
+  vertical-align:baseline;
+  flex-wrap: wrap;
+}*/
 
 
-  .start-button {
-    font-family: Comfortaa, cursive;
-      font-weight: bolder;
-    font-size: 20px;
-    background-color: #00ffdf;
-    padding: 20px;
-    margin: 0 auto;
-  }
+.start-button {
+  font-family: Comfortaa, cursive;
+  font-weight: bolder;
+  font-size: 20px;
+  background-color: #00ffdf;
+  padding: 20px;
+  margin: 0 auto;
+}
 
-  .go-button {
-   font-family: Comfortaa, cursive;
-     font-weight: bolder;
-   font-size: 20px;
-   background-color: #00ffdf;
-   padding: 20px;
-   margin: 60px auto;
-   display: block;
- }
+.go-button {
+  font-family: Comfortaa, cursive;
+  font-weight: bolder;
+  font-size: 20px;
+  background-color: #00ffdf;
+  padding: 20px;
+  margin: 60px auto;
+  display: block;
+}
 
 #modal-repeat {
   display: none;
@@ -68,7 +67,6 @@ body {
 
 .mushroom-container {
   display: none;
-  margin-top: -120px;
 }
 
 h2 {
@@ -80,10 +78,10 @@ h2 {
 }
 
 h3 {
-  font-family: "Digital Dream Fat";
+  font-family: Comfortaa, cursive;
   font-size: 40px;
   padding-right: 50px;
-  margin-top: -130px;
+  margin-top: -79px;
   text-align: right;
   display: block;
 }
@@ -106,15 +104,43 @@ h3 {
 }
 
 
-/*ideas for moving mushrooms ... learn more about css animations */
+/*keyframes animations - move to separate css file later ? */
 
-  @keyframes colorRotate {
-    100% {
-      -webkit-filter: hue-rotate(360deg);
-    }
+
+@keyframes colorRotate {
+  100% {
+    -webkit-filter: hue-rotate(360deg);
   }
+}
 
-  @keyframes slideSlow {
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(3600deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes vibrate {
+  25% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateY(6px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+  /*@keyframes slideSlow {
     75% {
       margin-left: 25%;
     }
@@ -124,36 +150,7 @@ h3 {
     to {
       margin-left: 0%;
     }
-  }
-
-
-  @keyframes spin {
-  0% {
-      transform: rotate(0deg);
-
-  }
-  100% {
-      transform: rotate(3600deg);
-      filter: hue-rotate(360deg);
-      }
-  }
-
-  @keyframes vibrate {
-    25% {
-      transform: translateX(6px);
-    }
-    50% {
-      transform: translateY(6px);
-    }
-    75% {
-      transform: translateX(6px);
-    }
-    100% {
-      transform: translateY(6px);
-      filter: hue-rotate(360deg);
-    }
-  }
-
+  }*/
   /*@@keyframes slideMed {
     75% {
       margin-left: 55%;

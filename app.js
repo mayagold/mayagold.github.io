@@ -1,22 +1,28 @@
-// Did I link my files and JQUERY?
+
 // console.log('test');
 // $
 
-// Wednesday goals
+// Thursday goals
 
-// add animations to mushrooms so that they move around the page
-// make the timer look cool / add animation
-// move score and to modals
+// Animate mushrooms differently for each round
+  // round 1: no animation, just scattered
+  // round 2: they move horizontally in same direction
+  // round 3: they move horizontally in both directions past each other
+  // round 4: they move up and down in both directions
+  // round 5: they move in all directions up/down/left/right on x/y axis
+  // round 6: they move x/y/z
+  // round 7: they disappear and reappear somewhere else on the page
+
+
+// Friday goals
+  // figure out the whole background situation ... wtf is that gonna be
 
 
 // JQUERY WINDOW ONLOAD
-
 $(() => {
-
 // Declare score and time variables outside of any object
   let score = 5;
   let time = 30;
-
 // Event Handlers object
   const eventHandlers = {
     // start game: when you click the Start or Start Over button
@@ -29,7 +35,6 @@ $(() => {
         $('.mushroom-container').css('display', 'block');
         $('.start-button').off();
         setUpRound();
-
       });
     },
     // clicking on mushrooms -- changes the score based on their class
@@ -37,37 +42,36 @@ $(() => {
       $('img').on('click', (e) => {
         if ($(e.currentTarget).attr('class') === 'poisonous') {
           score--;
+          // this could probably be shortened into one line,
           $(e.currentTarget).css('animation-name', 'vibrate');
           $(e.currentTarget).css('animation-duration', '.1s');
           $(e.currentTarget).css('animation-iteration-count', '10');
           $(e.currentTarget).delay(1000).fadeOut();
-          // alert("Be careful! That one was poisonous.")
           $('#show-power').text('Power: ' + score);
-          console.log('lose point');
-            console.log(score);
+          // console.log('lose point');
+          // console.log(score);
         } else if ($(e.currentTarget).attr('class') === 'magic') {
           score++;
+          // this could probably be shortened too,
           $(e.currentTarget).css('animation-name', 'spin');
           $(e.currentTarget).css('animation-duration', '2s');
           $(e.currentTarget).css('animation-iteration-count', '1');
           $(e.currentTarget).delay(1700).fadeOut();
-
-          // alert("You found a magic mushroom!");
-            $('#show-power').text('Power: ' + score);
-          console.log('win point');
-            console.log(score);
+          $('#show-power').text('Power: ' + score);
+          // console.log('win point');
+          // console.log(score);
         } else if ($(e.currentTarget).attr('class') === 'normal') {
-            $(e.currentTarget).delay(200).fadeOut();
-            $('#show-power').text('Power: ' + score);
-          console.log('no change');
-          console.log(score);
+          $(e.currentTarget).delay(200).fadeOut();
+          $('#show-power').text('Power: ' + score);
+          // console.log('no change');
+          // console.log(score);
         }
       });
     },
     // when you click Keep Playing after winning a round
     nextRound() {
       $('#next-button').on('click', () => {
-        console.log('working');
+        // console.log('working');
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
@@ -78,7 +82,7 @@ $(() => {
     // when you click Keep Playing after losing a round
     repeatRound() {
       $('#repeat-button').on('click', () => {
-        console.log('working');
+        // console.log('working');
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
@@ -109,7 +113,6 @@ $(() => {
   }
 
 // the game round object
-
   const round = {
     // round number can be updated
     roundNumber: 1,
@@ -146,11 +149,11 @@ $(() => {
       time=30;
       const timer = setInterval( ()=> {
         time--
-        console.log(time);
+        // console.log(time);
         $('h3').text(time);
         if (time===0) {
           clearInterval(timer);
-            checkForWin();
+          checkForWin();
         }
       }, 1000);
     },
@@ -171,7 +174,7 @@ $(() => {
     },
     roundAnimation(round) {
       if (round===1){
-        console.log('called');
+        // console.log('called');
         // $('.poisonous').css('animation-name', 'spin');
         // $('.poisonous').css('animation-duration', '3s');
         // $('.poisonous').css('animation-iteration-count', '10');
@@ -182,7 +185,7 @@ $(() => {
         // $('.normal').css('animation-duration', '3s');
         // $('.normal').css('animation-iteration-count', '10');
       } else {
-        console.log('working');
+        // console.log('working');
       }
     //   else if (round===2){}
     //   else if (round===3){}
@@ -197,7 +200,7 @@ $(() => {
 // the actual function that starts a new round
 
   const setUpRound = () => {
-    $('#show-round').text('Round '+ round.roundNumber);
+    // $('#show-round').text('Round '+ round.roundNumber);
     round.clearBoard();
     round.generateShrooms(round.roundNumber*20);
     round.setTimer();
@@ -226,7 +229,6 @@ $(() => {
   }
 
   // turn on event listener for start button when the page loads!
-
   eventHandlers.startGame();
 
 })
