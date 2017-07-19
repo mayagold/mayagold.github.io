@@ -4,13 +4,14 @@
 
 // Wednesday goals
 
-
-// fix bug that is making the timer increase speed each round
 // add animations to mushrooms so that they move around the page
 // add different animations for when you click on a poisonous and a magic mushroom
 // style the page and the modals
 // add the round# at the top of the page while playing, above Power
 // make the timer look cool / add animation
+
+
+
 
 
 // JQUERY WINDOW ONLOAD
@@ -42,17 +43,17 @@ const eventHandlers = {
       if ($(e.currentTarget).attr('class') === 'poisonous') {
         score--;
         // alert("Be careful! That one was poisonous.")
-        $('h2').text('Power: ' + score);
+        $('#show-power').text('Power: ' + score);
         console.log('lose point');
           console.log(score);
       } else if ($(e.currentTarget).attr('class') === 'magic') {
         score++;
         // alert("You found a magic mushroom!");
-          $('h2').text('Power: ' + score);
+          $('#show-power').text('Power: ' + score);
         console.log('win point');
           console.log(score);
       } else if ($(e.currentTarget).attr('class') === 'normal') {
-          $('h2').text('Power: ' + score);
+          $('#show-power').text('Power: ' + score);
         console.log('no change');
         console.log(score);
       }
@@ -114,6 +115,7 @@ const round = {
 
 
 const setUpRound = () => {
+  $('#show-round').text('Round: '+ round.roundNumber);
   round.clearBoard();
   round.generateShrooms(round.roundNumber*20);
   round.setTimer();
