@@ -8,8 +8,7 @@
 // add different animations for when you click on a poisonous and a magic mushroom
 // style the page and the modals
 // make the timer look cool / add animation
-// comment out code
-// fix restart button
+// fix restart button bug
 
 
 // JQUERY WINDOW ONLOAD
@@ -37,7 +36,8 @@ $(() => {
     // clicking on mushrooms -- changes the score based on their class
     clickShrooms() {
       $('img').on('click', (e) => {
-        $(e.currentTarget).hide()});
+        $(e.currentTarget).delay(200).fadeOut();
+      });
       $('img').on('click', (e) => {
         if ($(e.currentTarget).attr('class') === 'poisonous') {
           score--;
@@ -96,6 +96,9 @@ $(() => {
       for (i=0; i<num; i++) {
         const shroom = $('<img src="images/Mushroom.png"/>');
         shroom.css('max-height', '50px');
+        shroom.css('animation-name', 'colorRotate');
+        shroom.css('animation-duration', '15s');
+        shroom.css('animation-iteration-count', '2')
         const left = (Math.random()*1000) + 'px';
         const top = (Math.random()*500) + 'px';
         // console.log(top);
