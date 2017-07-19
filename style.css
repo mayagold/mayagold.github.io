@@ -1,7 +1,7 @@
 body {
   font-family: "Comfortaa", cursive;
   background-color: rgba(0,0,0,.7);
-  color: white;
+  color: #EBE2C0;
 }
 
 .modal {
@@ -23,9 +23,6 @@ body {
     flex-wrap: wrap;
   }
 
-  p {
-    padding-top: 20px;
-  }
 
   .start-button {
     font-family: "Comfortaa", cursive;
@@ -45,20 +42,20 @@ body {
  }
 
 #modal-repeat {
-  /*display: none;*/
+  display: none;
   height: 600px;
 }
 
 #modal-next-round {
-  /*display: none;*/
+  display: none;
 }
 
 #modal-win {
-  /*display: none;*/
+  display: none;
 }
 
 #modal-lose {
-  /*display: none;*/
+  display: none;
 }
 
 .game-container {
@@ -80,22 +77,20 @@ h3 {
 }
 
 .poisonous {
-
-  /*animation-name: slideSlow;
-  animation-duration: 10s;
-  animation-iteration-count: 3;*/
-  display: inline-block;
-  background: #df00ff;
+  display: block;
+  position: absolute;
+  /*background: #df00ff;*/
 }
 
 .normal {
-  display: inline-block;
-  /*background:#5f00ff;*/
+  display: block;
+  position: absolute;
 }
 
 .magic {
-  display: inline-block;
-  background: #00ff5f;
+  display: block;
+  position: absolute;
+  /*background: #00ff5f;*/
 }
 
 
@@ -141,7 +136,9 @@ h3 {
   }*/
 
 
-
+  /*animation-name: slideSlow;
+  animation-duration: 10s;
+  animation-iteration-count: 3;*/
 
 
 

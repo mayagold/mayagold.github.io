@@ -96,6 +96,11 @@ $(() => {
       for (i=0; i<num; i++) {
         const shroom = $('<img src="images/Mushroom.png"/>');
         shroom.css('max-height', '50px');
+        const left = (Math.random()*1000) + 'px';
+        const top = (Math.random()*500) + 'px';
+        // console.log(top);
+        shroom.css('margin-left', left);
+        shroom.css('margin-top', top)
         $('.mushroom-container').append(shroom);
         let typeOfShroom = Math.random();
         if (typeOfShroom < .5) {
