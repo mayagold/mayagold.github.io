@@ -36,22 +36,26 @@ $(() => {
     // clicking on mushrooms -- changes the score based on their class
     clickShrooms() {
       $('img').on('click', (e) => {
-        $(e.currentTarget).delay(200).fadeOut();
-      });
-      $('img').on('click', (e) => {
         if ($(e.currentTarget).attr('class') === 'poisonous') {
           score--;
+          $(e.currentTarget).delay(200).fadeOut();
           // alert("Be careful! That one was poisonous.")
           $('#show-power').text('Power: ' + score);
           console.log('lose point');
             console.log(score);
         } else if ($(e.currentTarget).attr('class') === 'magic') {
           score++;
+          $(e.currentTarget).css('animation-name', 'spin');
+          $(e.currentTarget).css('animation-duration', '2s');
+          $(e.currentTarget).css('animation-iteration-count', '1');
+          $(e.currentTarget).delay(2000).fadeOut();
+
           // alert("You found a magic mushroom!");
             $('#show-power').text('Power: ' + score);
           console.log('win point');
             console.log(score);
         } else if ($(e.currentTarget).attr('class') === 'normal') {
+            $(e.currentTarget).delay(200).fadeOut();
             $('#show-power').text('Power: ' + score);
           console.log('no change');
           console.log(score);
@@ -144,20 +148,27 @@ $(() => {
     roundAnimation(round) {
       if (round===1){
         console.log('called');
-        // $('.poisonous').css('animation-name', 'slideSlow');
-        // $('.poisonous').css('animation-duration', '15s');
-        // $('.poisonous').css('animation-iteration-count', '2');
+        // $('.poisonous').css('animation-name', 'spin');
+        // $('.poisonous').css('animation-duration', '3s');
+        // $('.poisonous').css('animation-iteration-count', '10');
+        // $('.magic').css('animation-name', 'spin');
+        // $('.magic').css('animation-duration', '3s');
+        // $('.magic').css('animation-iteration-count', '10');
+        // $('.normal').css('animation-name', 'spin');
+        // $('.normal').css('animation-duration', '3s');
+        // $('.normal').css('animation-iteration-count', '10');
       } else {
         console.log('working');
       }
-    //   else if (round===1){}
-    //   else if (round===1){}
-    //   else if (round===1){}
-    //   else if (round===1){}
-    //   else if (round===1){}
-    //   else if (round===1){}
+    //   else if (round===2){}
+    //   else if (round===3){}
+    //   else if (round===4){}
+    //   else if (round===5){}
+    //   else if (round===6){}
+    //   else if (round===7){}
     // }
-  } }
+    }
+  }
 
 // the actual function that starts a new round
 

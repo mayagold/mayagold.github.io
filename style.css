@@ -1,7 +1,7 @@
 body {
   font-family: "Comfortaa", cursive;
-  background-color: rgba(0,0,0,.7);
-  color: #EBD0C0;
+  background-color: rgba(0,0,0,1);
+  color: white;
 }
 
 .modal {
@@ -115,6 +115,20 @@ h3 {
   }
 
 
+  @keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+      transform: rotate(3600deg);
+      filter: hue-rotate(360deg);
+      }
+
+  }
+
 
   /*@@keyframes slideMed {
     75% {
@@ -136,9 +150,6 @@ h3 {
   }*/
 
 
-  animation-name: round1;
-  animation-duration: 10s;
-  animation-iteration-count: 3;
 
 
 
