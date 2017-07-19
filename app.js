@@ -49,14 +49,15 @@ const eventHandlers = {
       }
     });
   },
-  goButton() {
+  go() {
     $('#go-button').on('click', () => {
+      console.log('working');
       $('.modal').css('display', 'none');
       $('.game-container').css('display', 'block');
       $('.mushroom-container').css('display', 'block');
       setUpRound();
-    })
-},
+    });
+  },
 }
 
 
@@ -117,68 +118,55 @@ const setUpRound = () => {
 
 const checkForWin = () => {
   if (score <= 0) {
-    // call the lose modal
+    $('.game-container').css('display', 'none');
+    $('#modal-lose').css('display', 'block');
   }
   if ((round.roundNumber === 1) && (score < 10)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((score >= 10) && (round.roundNumber===1)) {
     round.roundNumber=2;
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===2) && (score<20)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   }  else if ((score >= 20) && (round.roundNumber===2)) {
-    round.roundNumber=3;
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===3) && (score < 30)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((score >= 30) && (round.roundNumber===3)) {
     round.roundNumber=4;
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===4) && (score < 40)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((score >= 40) && (round.roundNumber===4)) {
     round.roundNumber=5;
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===5) && (score < 50)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((score >= 50) && (round.roundNumber===5)) {
     round.roundNumber=6;
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===6) && (score < 60)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((score >= 60) && (round.roundNumber===6)) {
     round.roundNumber=7;
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===7) && (score < 70)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
-    eventHandlers.goButton();
   } else if ((round.roundNumber===7) && (score >= 70)) {
-    $('.game-container').css('display', 'hide');
+    $('.game-container').css('display', 'none');
     $('#modal-win').css('display', 'block');
   }
 }
@@ -186,6 +174,6 @@ const checkForWin = () => {
 
 
 eventHandlers.startGame();
-
+eventHandlers.go();
 
 })
