@@ -108,7 +108,7 @@ const setTimer = () => {
 
 const setUpRound = (roundNumber) => {
   $('.mushroom-container').empty();
-  generateShrooms(roundNumber*10);
+  generateShrooms(roundNumber*30);
   clickShrooms();
   setTimer();
   // addAnimation(roundNumber);

@@ -1,0 +1,50 @@
+<!-- ****************************************
+****************************************
+
+START game
+
+Modal:
+Explain rules
+
+* EVENT HANDLER *
+Start Button: Click
+-hides the modal
+-shows the main page
+-call setUpRound(1)
+
+
+
+****************************************
+****************************************
+
+* ROUND 1 *
+
+
+setUpRound(round):
+  takes round number as a parameter.
+  empty the current board of all mushroom divs
+          (mushroom-container.empty)
+  generateShrooms(roundNumber*10)
+  clickShrooms: add event handler to mushrooms where points +/- and they hide when clicked.
+  startTimer: 30 seconds, displays countdown on page, decreases to zero.
+  updateScore: +/- score based on clicks.
+
+
+
+checkForWin:
+  when time=0
+  if/then function.
+      if points <= 0
+          lose modal
+      if round #=x and points >= required:
+          next round modal pops up
+          unlock next background
+          set up the next round
+      if round = x and points < required:
+          repeat round modal
+          set up the same round
+      if points > win points:
+          win modal
+          colorRotate background looks dope (hopefully) -->
+
+          

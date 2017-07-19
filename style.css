@@ -2,22 +2,22 @@ body {
   font-family: "Comfortaa", cursive;
 }
 
-.modal {
-   background: black;
-}
 
-.modal-1 {
+
+.modal {
     background: black;
     text-align: center;
     animation: colorRotate 3s linear infinite;
-    max-height: 800px;
+    height: 600px;
+    width: 1000px;
+    margin: 30px
   }
 
   #intro-image {
     display: block;
-    margin: 0 auto;
-    padding-top: 80px;
+    margin: 0 50px;
     z-index: -1;
+    height: 400px;
   }
 
   #intro-text {
@@ -25,8 +25,8 @@ body {
     border: 3px solid rgba(255,255,255,.3);
     color: white;
     display: block;
-    position: relative;
-    transform: translateY(-550px);
+    position:absolute;
+    transform: translateY(-350px);
     margin: 0 60px;
     font-size: 20px;
     padding: 40px;
@@ -37,8 +37,7 @@ body {
     font-size: 20px;
     background-color: #00ffdf;
     padding: 20px;
-    transform: translateY(-450px);
-    margin: 0 auto;
+    margin: 60px auto;
     display: block;
 
   }
@@ -59,21 +58,21 @@ h3 {
 
 .poisonous {
 
-  /*animation-name: slideSlow;
+  animation-name: slideSlow;
   animation-duration: 10s;
-  animation-iteration-count: 3;*/
+  animation-iteration-count: 3;
   display: inline-block;
-  background: #df00ff;
+  /*background: #df00ff;*/
 }
 
 .normal {
   display: inline-block;
-  background:#5f00ff;
+  /*background:#5f00ff;*/
 }
 
 .magic {
   display: inline-block;
-  background: #00ff5f;
+  /*background: #00ff5f;*/
 }
 
 
@@ -85,7 +84,7 @@ h3 {
     }
   }
 
-  /*@keyframes slideSlow {
+  @keyframes slideSlow {
     75% {
       margin-left: 25%;
     }
@@ -95,7 +94,7 @@ h3 {
     to {
       margin-left: 0%;
     }
-  }*/
+  }
 
 
 
