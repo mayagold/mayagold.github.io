@@ -7,6 +7,7 @@
 // add animations to mushrooms so that they move around the page
 // make the timer look cool / add animation
 // fix restart button bug
+// move score to modals
 
 
 // JQUERY WINDOW ONLOAD
@@ -27,6 +28,7 @@ $(() => {
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
+        $('.start-button').off();
         setUpRound();
 
       });
@@ -83,6 +85,26 @@ $(() => {
         $('.mushroom-container').css('display', 'block');
         $('#repeat-button').off();
         setUpRound();
+      });
+    },
+    restartGame() {
+      score=5;
+      $('#restart-button').on('click', () => {
+        $('.modal').hide();
+        $('.game-container').css('display', 'block');
+        $('.mushroom-container').css('display', 'block');
+        setUpRound();
+        $('#restart-button').off();
+      });
+    },
+    newGame() {
+      score=5;
+      $('#new-game-button').on('click', () => {
+        $('.modal').hide();
+        $('.game-container').css('display', 'block');
+        $('.mushroom-container').css('display', 'block');
+        setUpRound();
+        $('#new-game-button').off();
       });
     },
   }
@@ -174,7 +196,7 @@ $(() => {
 // the actual function that starts a new round
 
   const setUpRound = () => {
-    $('#show-round').text('Round: '+ round.roundNumber);
+    $('#show-round').text('Round '+ round.roundNumber);
     round.clearBoard();
     round.generateShrooms(round.roundNumber*20);
     round.setTimer();
@@ -189,7 +211,7 @@ $(() => {
       round.roundNumber=1;
       $('.game-container').css('display', 'none');
       $('#modal-lose').css('display', 'block');
-      eventHandlers.startGame();
+      eventHandlers.restartGame();
     }  else if ( ((round.roundNumber === 1) && (score < 10)) ||((round.roundNumber===2) && (score<20)) || ((round.roundNumber=== 3 ) && (score < 30)) || ((round.roundNumber===4 ) && (score < 40)) || ((round.roundNumber=== 5 ) && (score < 50))  || ((round.roundNumber===6 ) && (score < 60)) || ((round.roundNumber===7 ) && (score < 70)) )  {
       round.roundRepeat();
     } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 20) && (round.roundNumber===2)) || ((score >= 30) && (round.roundNumber===3)) || ((score >= 40) && (round.roundNumber===4)) || ((score >= 50) && (round.roundNumber===5)) || ((score >= 60) && (round.roundNumber===6)) ) {
@@ -198,7 +220,7 @@ $(() => {
       round.roundNumber=1;
       $('.game-container').css('display', 'none');
       $('#modal-win').css('display', 'block');
-      eventHandlers.startGame();
+      eventHandlers.newGame();
     }
   }
 
