@@ -58,9 +58,9 @@ h3 {
 
 .poisonous {
 
-  animation-name: slideSlow;
+  /*animation-name: slideSlow;
   animation-duration: 10s;
-  animation-iteration-count: 3;
+  animation-iteration-count: 3;*/
   display: inline-block;
   /*background: #df00ff;*/
 }

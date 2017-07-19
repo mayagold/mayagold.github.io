@@ -11,133 +11,162 @@ $(() => {
 let score = 5;
 let time = 30;
 
+
 // First user prompt: Start button closes the intro modal and takes you to the game.
 // User will click on start button after reading the directions on the modal.
 // This will hide the modal (display:none) and show the mushroom-container div, which is the play space.
 
-$('#start-button').on('click', () => {
-  $('.modal-1').css('display', 'none');
-  $('.mushroom-container').css('display', 'block');
-  setTimer();
-  checkPower(score);
-});
+
+const eventHandlers = {
+  startGame() {
+    $('#start-button').on('click', () => {
+      $('.modal-1').css('display', 'none');
+      $('.mushroom-container').css('display', 'block');
+      setUpRound();
+    });
+  },
+  clickShrooms() {
+    $('img').on('click', (e) => {
+      $(e.currentTarget).hide()});
+    $('img').on('click', (e) => {
+      if ($(e.currentTarget).attr('class') === 'poisonous') {
+        score--;
+        // alert("Be careful! That one was poisonous.")
+        $('h2').text('Power: ' + score);
+        console.log('lose point');
+          console.log(score);
+      } else if ($(e.currentTarget).attr('class') === 'magic') {
+        score++;
+        // alert("You found a magic mushroom!");
+          $('h2').text('Power: ' + score);
+        console.log('win point');
+          console.log(score);
+      } else if ($(e.currentTarget).attr('class') === 'normal') {
+          $('h2').text('Power: ' + score);
+        console.log('no change');
+        console.log(score);
+      }
+    });
+  },
 
 
-// at the beginning of each round, run the generateShrooms equation with a number input. It will generate the input# of mushroom elements onto the page, and randomly assign the new mushroom elements with a class of "normal", "poisonous" or "magic". there is a high probability of mushroom being normal, and a lower probability of it being magic, and the lowest probability of it being poisonous.
 
-const generateShrooms = (num) => {
-  for (i=0; i<num; i++) {
-    const shroom = $('<img src="images/Mushroom.png"/>');
-    shroom.css('max-height', '50px');
-    $('.mushroom-container').append(shroom);
-    let typeOfShroom = Math.random();
-    if (typeOfShroom < .5) {
-      shroom.addClass('normal');
-    } else if ((typeOfShroom >= .5) && (typeOfShroom <.8)) {
-      shroom.addClass('magic');
-    } else if (typeOfShroom >= .8) {
-      shroom.addClass('poisonous');
+}
+
+
+
+
+
+// the game round object
+
+const round = {
+  roundNumber: 1,
+  clearBoard () {
+    $('.mushroom-container').empty();
+  },
+  generateShrooms(num) {
+    for (i=0; i<num; i++) {
+      const shroom = $('<img src="images/Mushroom.png"/>');
+      shroom.css('max-height', '50px');
+      $('.mushroom-container').append(shroom);
+      let typeOfShroom = Math.random();
+      if (typeOfShroom < .5) {
+        shroom.addClass('normal');
+      } else if ((typeOfShroom >= .5) && (typeOfShroom <.8)) {
+        shroom.addClass('magic');
+      } else if (typeOfShroom >= .8) {
+        shroom.addClass('poisonous');
+      }
     }
+  },
+  setTimer() {
+    time=30;
+    const timer = setInterval( ()=> {
+      time--
+      console.log(time);
+      $('h3').text("Timer: " + time + " sec");
+      if (time===0) {
+        clearInterval(timer);
+          checkForWin();
+      }
+    }, 1000);
+  },
+}
+
+
+
+
+
+const setUpRound = () => {
+  round.clearBoard();
+  round.generateShrooms(round.roundNumber*20);
+  round.setTimer();
+  eventHandlers.clickShrooms();
+}
+
+
+
+
+
+
+const checkForWin = () => {
+  if (score <= 0) {
+    // call the lose modal
+  }
+  if ((round.roundNumber === 1) && (score < 10)) {
+    // if you don't pass round 1
+    // call the repeat round modal and restart round 1
+    setUpRound();
+  } else if ((score >= 10) && (round.roundNumber===1)) {
+    // call next round modal
+    round.roundNumber=2;
+    setUpRound();
+  } else if ((round.roundNumber===2) && (score<20)) {
+    // call repeat round modal
+    setUpRound();
+  }  else if ((score >= 20) && (round.roundNumber===2)) {
+    //call next round modal
+    round.roundNumber=3;
+    setUpRound();
+  } else if ((round.roundNumber===3) && (score < 30)) {
+    // call repeat round modal
+    setUpRound();
+  } else if ((score >= 30) && (round.roundNumber===3)) {
+        //call next round modal
+    round.roundNumber=4;
+    setUpRound();
+  } else if ((round.roundNumber===4) && (score < 40)) {
+    // call repeat round modal
+    setUpRound();
+  } else if ((score >= 40) && (round.roundNumber===4)) {
+        //call next round modal
+    round.roundNumber=5;
+    setUpRound();
+  } else if ((round.roundNumber===5) && (score < 50)) {
+    // call repeat round modal
+    setUpRound();
+  } else if ((score >= 50) && (round.roundNumber===5)) {
+        //call next round modal
+    round.roundNumber=6;
+    setUpRound();
+  } else if ((round.roundNumber===6) && (score < 60)) {
+    // call repeat round modal
+    setUpRound();
+  } else if ((score >= 60) && (round.roundNumber===6)) {
+        //call next round modal
+    round.roundNumber=7;
+    setUpRound();
+  } else if ((round.roundNumber===7) && (score < 70)) {
+    // call repeat round modal
+    setUpRound();
+  } else if ((round.roundNumber===7) && (score >= 70)) {
+    // modal-win
   }
 }
 
-// the score updates when you click on the mushrooms: ++ if you click a magic one, -- if you click a poisonous one, no change if you click a normal one
-
-const clickShrooms = () => {
-  $('img').on('click', (e) => {
-    $(e.currentTarget).hide()});
-  $('img').on('click', (e) => {
-    if ($(e.currentTarget).attr('class') === 'poisonous') {
-      score--;
-      alert("Be careful! That one was poisonous.")
-      $('h2').text('Power: ' + score);
-      console.log('lose point');
-        console.log(score);
-    } else if ($(e.currentTarget).attr('class') === 'magic') {
-      score++;
-      alert("You found a magic mushroom!");
-        // $('mushroom-container').css('animation-name', 'colorFlash');
-        // $('mushroom-container').css('animation-duration', '1s');
-        $('h2').text('Power: ' + score);
-      console.log('win point');
-        console.log(score);
-    } else if ($(e.currentTarget).attr('class') === 'normal') {
-        $('h2').text('Power: ' + score);
-      console.log('no change');
-      console.log(score);
-    }
-  });
-
-}
 
 
-
-
-// The game timer: each round lasts 30 seconds
-
-
-const setTimer = () => {
-  const timer = setInterval( ()=> {
-    time--
-    console.log(time);
-    $('h3').text("Timer: " + time + " sec");
-    if (time===0) {
-      checkPower(score);
-      clearInterval(timer);
-      time=30;
-    }
-  }, 1000);
-}
-// const startTimer = () => {
-//   at the end of this function: checkForWin function
-      // if score is a certain amount, setUpRound(x)
-// }
-
-// const addAnimation
-
-// const updateScore
-// event handler on all the images
-
-
-// the start round function: when you click start round button, the function
-// 1. generates the mushrooms (round#*20)
-// 2. adds animation to the mushrooms, using addAnimation(roundNumber) function, different each round based on difficulty
-// 3. starts the timer
-// 4. updates the score as you click
-
-
-const setUpRound = (roundNumber) => {
-  $('.mushroom-container').empty();
-  generateShrooms(roundNumber*30);
-  clickShrooms();
-  setTimer();
-  // addAnimation(roundNumber);
-}
-// setUpRound(1);
-
-// Mushroom animations: different for each round. They bounce around the page at different speeds.
-
-
-const checkPower = (power) => {
-  if (power < 10) {
-    setUpRound(1);
-  } else if ((power >= 10) && (power<20)) {
-      setUpRound(2);
-  } else if ((power >= 20) && (power<30)) {
-      setUpRound(3);
-  } else if ((power >= 30) && (power<40)) {
-      setUpRound(4);
-  } else if ((power >= 40) && (power<50)) {
-      setUpRound(5);
-  } else if ((power >= 50) && (power<60)) {
-      setUpRound(6);
-  } else if ((power >= 60) && (power<70)) {
-      setUpRound(7);
-  // } else if (power >= 80) {
-  //     winGame();
-  // }
-}}
-
+eventHandlers.startGame();
 
 
 })
