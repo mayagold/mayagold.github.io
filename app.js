@@ -5,8 +5,6 @@
 // Wednesday goals
 
 // add animations to mushrooms so that they move around the page
-// add different animations for when you click on a poisonous and a magic mushroom
-// style the page and the modals
 // make the timer look cool / add animation
 // fix restart button bug
 
@@ -39,9 +37,9 @@ $(() => {
         if ($(e.currentTarget).attr('class') === 'poisonous') {
           score--;
           $(e.currentTarget).css('animation-name', 'vibrate');
-          $(e.currentTarget).css('animation-duration', '.2s');
-          $(e.currentTarget).css('animation-iteration-count', '20');
-          $(e.currentTarget).delay(1700).fadeOut();
+          $(e.currentTarget).css('animation-duration', '.1s');
+          $(e.currentTarget).css('animation-iteration-count', '10');
+          $(e.currentTarget).delay(1000).fadeOut();
           // alert("Be careful! That one was poisonous.")
           $('#show-power').text('Power: ' + score);
           console.log('lose point');
@@ -51,7 +49,7 @@ $(() => {
           $(e.currentTarget).css('animation-name', 'spin');
           $(e.currentTarget).css('animation-duration', '2s');
           $(e.currentTarget).css('animation-iteration-count', '1');
-          $(e.currentTarget).delay(2000).fadeOut();
+          $(e.currentTarget).delay(1700).fadeOut();
 
           // alert("You found a magic mushroom!");
             $('#show-power').text('Power: ' + score);
@@ -128,7 +126,7 @@ $(() => {
       const timer = setInterval( ()=> {
         time--
         console.log(time);
-        $('h3').text("Timer: " + time + " sec");
+        $('h3').text(time);
         if (time===0) {
           clearInterval(timer);
             checkForWin();
