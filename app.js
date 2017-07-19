@@ -2,6 +2,15 @@
 // console.log('test');
 // $
 
+// Wednesday goals
+
+
+// fix bug that is making the timer increase speed each round
+// add animations to mushrooms so that they move around the page
+// add different animations for when you click on a poisonous and a magic mushroom
+// style the page and the modals
+// add the round# at the top of the page while playing, above Power
+// make the timer look cool / add animation
 
 
 // JQUERY WINDOW ONLOAD
@@ -19,8 +28,8 @@ let time = 30;
 
 const eventHandlers = {
   startGame() {
-    $('#start-button').on('click', () => {
-      $('#modal-intro').css('display', 'none');
+    $('.start-button').on('click', () => {
+      $('#modal-intro').hide();
       $('.game-container').css('display', 'block');
       $('.mushroom-container').css('display', 'block');
       setUpRound();
@@ -50,9 +59,9 @@ const eventHandlers = {
     });
   },
   go() {
-    $('#go-button').on('click', () => {
+    $('.go-button').on('click', () => {
       console.log('working');
-      $('.modal').css('display', 'none');
+      $('.modal').hide();
       $('.game-container').css('display', 'block');
       $('.mushroom-container').css('display', 'block');
       setUpRound();
@@ -120,51 +129,65 @@ const checkForWin = () => {
   if (score <= 0) {
     $('.game-container').css('display', 'none');
     $('#modal-lose').css('display', 'block');
+    eventHandlers.go();
   }
   if ((round.roundNumber === 1) && (score < 10)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   } else if ((score >= 10) && (round.roundNumber===1)) {
     round.roundNumber=2;
     $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===2) && (score<20)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   }  else if ((score >= 20) && (round.roundNumber===2)) {
     $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===3) && (score < 30)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   } else if ((score >= 30) && (round.roundNumber===3)) {
     round.roundNumber=4;
     $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===4) && (score < 40)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   } else if ((score >= 40) && (round.roundNumber===4)) {
     round.roundNumber=5;
     $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===5) && (score < 50)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   } else if ((score >= 50) && (round.roundNumber===5)) {
     round.roundNumber=6;
     $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===6) && (score < 60)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   } else if ((score >= 60) && (round.roundNumber===6)) {
     round.roundNumber=7;
     $('.game-container').css('display', 'none');
     $('#modal-next-round').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===7) && (score < 70)) {
     $('.game-container').css('display', 'none');
     $('#modal-repeat').css('display', 'block');
+    eventHandlers.go();
   } else if ((round.roundNumber===7) && (score >= 70)) {
     $('.game-container').css('display', 'none');
     $('#modal-win').css('display', 'block');
@@ -174,6 +197,6 @@ const checkForWin = () => {
 
 
 eventHandlers.startGame();
-eventHandlers.go();
+
 
 })

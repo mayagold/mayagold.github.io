@@ -32,7 +32,7 @@ body {
     padding: 40px;
   }
 
-  #start-button {
+  .start-button {
     font-family: "Comfortaa", cursive;
     font-size: 20px;
     background-color: #00ffdf;
@@ -41,7 +41,7 @@ body {
     display: block;
   }
 
-  #go-button {
+  .go-button {
    font-family: "Comfortaa", cursive;
    font-size: 20px;
    background-color: #00ffdf;
