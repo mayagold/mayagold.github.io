@@ -20,7 +20,8 @@ let time = 30;
 const eventHandlers = {
   startGame() {
     $('#start-button').on('click', () => {
-      $('.modal-1').css('display', 'none');
+      $('#modal-intro').css('display', 'none');
+      $('.game-container').css('display', 'block');
       $('.mushroom-container').css('display', 'block');
       setUpRound();
     });
@@ -48,9 +49,14 @@ const eventHandlers = {
       }
     });
   },
-
-
-
+  goButton() {
+    $('#go-button').on('click', () => {
+      $('.modal').css('display', 'none');
+      $('.game-container').css('display', 'block');
+      $('.mushroom-container').css('display', 'block');
+      setUpRound();
+    })
+},
 }
 
 
@@ -114,53 +120,66 @@ const checkForWin = () => {
     // call the lose modal
   }
   if ((round.roundNumber === 1) && (score < 10)) {
-    // if you don't pass round 1
-    // call the repeat round modal and restart round 1
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((score >= 10) && (round.roundNumber===1)) {
-    // call next round modal
     round.roundNumber=2;
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-next-round').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===2) && (score<20)) {
-    // call repeat round modal
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   }  else if ((score >= 20) && (round.roundNumber===2)) {
-    //call next round modal
     round.roundNumber=3;
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-next-round').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===3) && (score < 30)) {
-    // call repeat round modal
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((score >= 30) && (round.roundNumber===3)) {
-        //call next round modal
     round.roundNumber=4;
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-next-round').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===4) && (score < 40)) {
-    // call repeat round modal
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((score >= 40) && (round.roundNumber===4)) {
-        //call next round modal
     round.roundNumber=5;
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-next-round').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===5) && (score < 50)) {
-    // call repeat round modal
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((score >= 50) && (round.roundNumber===5)) {
-        //call next round modal
     round.roundNumber=6;
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-next-round').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===6) && (score < 60)) {
-    // call repeat round modal
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((score >= 60) && (round.roundNumber===6)) {
-        //call next round modal
     round.roundNumber=7;
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-next-round').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===7) && (score < 70)) {
-    // call repeat round modal
-    setUpRound();
+    $('.game-container').css('display', 'hide');
+    $('#modal-repeat').css('display', 'block');
+    eventHandlers.goButton();
   } else if ((round.roundNumber===7) && (score >= 70)) {
-    // modal-win
+    $('.game-container').css('display', 'hide');
+    $('#modal-win').css('display', 'block');
   }
 }
 

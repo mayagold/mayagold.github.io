@@ -39,8 +39,36 @@ body {
     padding: 20px;
     margin: 60px auto;
     display: block;
-
   }
+
+  #go-button {
+   font-family: "Comfortaa", cursive;
+   font-size: 20px;
+   background-color: #00ffdf;
+   padding: 20px;
+   margin: 60px auto;
+   display: block;
+ }
+
+#modal-repeat {
+  display: none;
+}
+
+#modal-next-round {
+  display: none;
+}
+
+#modal-win {
+  display: none;
+}
+
+#modal-lose {
+  display: none;
+}
+
+.game-container {
+  display: none;
+}
 
 .mushroom-container {
   display: none;
