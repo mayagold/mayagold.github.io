@@ -58,6 +58,7 @@ $(() => {
         } else if (($(e.currentTarget).attr('class') === 'magic') || ($(e.currentTarget).attr('class') === 'magic velocity-animating')) {
           score++;
           // this could probably be shortened too,
+          $(e.currentTarget).velocity('stop');
           $(e.currentTarget).css('animation-name', 'spin');
           $(e.currentTarget).css('animation-duration', '4s');
           $(e.currentTarget).css('animation-iteration-count', '1');
@@ -66,6 +67,7 @@ $(() => {
           // console.log('win point');
           // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
+          $(e.currentTarget).velocity('stop');
           $(e.currentTarget).delay(200).fadeOut();
           $('#show-power').text('Power: ' + score);
           // console.log('no change');
@@ -176,30 +178,37 @@ $(() => {
       $('#modal-next-round').css('display', 'block');
       eventHandlers.nextRound();
     },
+
     roundAnimation(round) {
       if (round===1){
-        $('body').css('background', 'radial-gradient(ellipse farthest-corner at 45px 45px , white 0%, grey 50%, black 95%)');
+        $('body').css('background', 'url("https://media.giphy.com/media/1332vkhv8JWiXK/giphy.gif")');
       }  else if (round===2){
-        $('body').css('background', 'radial-gradient(circle, white, #df00ff, black)');
-        $('.poisonous').velocity({
-            translateX: 360,
-          }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
-        $('.normal').velocity({
-              translateX: 360,
-            }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
-        $('.magic').velocity({
-              translateX: 360,
-            }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
+        $('body').css('background', 'url("https://media.giphy.com/media/1lvaLip8VKiqc/giphy.gif")');
+        $('body').css('background-size', 'cover');
+        // $('.poisonous').velocity({
+        //     translateX: 360,
+        //   }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
+        // $('.normal').velocity({
+        //       translateX: 360,
+        //     }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
+        // $('.magic').velocity({
+        //       translateX: 360,
+        //     }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
       } else if (round===3){
-        $('body').css('background', 'radial-gradient(ellipse farthest-corner at 45px 45px , #df00ff 0%, white 50%, #00ff5f 95%)');
+        $('body').css('background', 'url("https://media.giphy.com/media/b1j3ZGwqzlrdC/giphy.gif")');
+        $('body').css('background-size', 'cover');
       } else if (round===4){
-        $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, black)');
+        $('body').css('background', 'url("https://media.giphy.com/media/26xBEez1vnVb2WgBq/giphy.gif")');
       } else if (round===5){
-        $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, black)');
+        $('body').css('background', 'url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif")');
+        $('body').css('background-size', 'cover');
+        // building
       } else if (round===6){
-        $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, #ff00a0, black)');
+        $('body').css('background', 'url("https://media.giphy.com/media/xTiTnnEDnHkidOckcE/giphy.gif")');
+        $('body').css('background-size', 'cover');
       } else if (round===7){
-        $('body').css('background', 'radial-gradient(circle, white, #00ffdf, #0020ff, #df00ff, #00ff5f, #ff00a0, #ffdf00, black)');
+        $('body').css('background', 'url("https://media.giphy.com/media/UKVS1ckVg6uEE/giphy.gif")');
+        $('body').css('background-size', 'cover');
       }
 
     }
@@ -230,7 +239,7 @@ $(() => {
     } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 20) && (round.roundNumber===2)) || ((score >= 30) && (round.roundNumber===3)) || ((score >= 40) && (round.roundNumber===4)) || ((score >= 50) && (round.roundNumber===5)) || ((score >= 60) && (round.roundNumber===6)) ) {
       round.roundNext();
     } else if ((round.roundNumber===7) && (score >= 70)) {
-      $('body').css('background', 'linear-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black)');
+      $('body').css('background', 'url("https://media.giphy.com/media/R57GovrvicbrG/giphy.gif")');
       $('#h3').hide();
       $('body').css('animation-name', 'colorRotate');
       $('body').css('animation-duration', '15s');
