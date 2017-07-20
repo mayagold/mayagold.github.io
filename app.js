@@ -42,17 +42,20 @@ $(() => {
     // clicking on mushrooms -- changes the score based on their class
     clickShrooms() {
       $('img').on('click', (e) => {
-        if ($(e.currentTarget).attr('class') === 'poisonous') {
+        console.log('click is happening', ' poisiniois')
+        if (($(e.currentTarget).attr('class') === 'poisonous velocity-animating') || ($(e.currentTarget).attr('class') === 'poisonous')) {
           score--;
           // this could probably be shortened into one line,
+          $(e.currentTarget).velocity('stop');
           $(e.currentTarget).css('animation-name', 'vibrate');
           $(e.currentTarget).css('animation-duration', '.1s');
           $(e.currentTarget).css('animation-iteration-count', '10');
           $(e.currentTarget).delay(1000).fadeOut();
+          console.log('clicking');
           $('#show-power').text('Power: ' + score);
           // console.log('lose point');
           // console.log(score);
-        } else if ($(e.currentTarget).attr('class') === 'magic') {
+        } else if (($(e.currentTarget).attr('class') === 'magic') || ($(e.currentTarget).attr('class') === 'magic velocity-animating')) {
           score++;
           // this could probably be shortened too,
           $(e.currentTarget).css('animation-name', 'spin');
@@ -62,7 +65,7 @@ $(() => {
           $('#show-power').text('Power: ' + score);
           // console.log('win point');
           // console.log(score);
-        } else if ($(e.currentTarget).attr('class') === 'normal') {
+        } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
           $(e.currentTarget).delay(200).fadeOut();
           $('#show-power').text('Power: ' + score);
           // console.log('no change');
@@ -175,11 +178,20 @@ $(() => {
     },
     roundAnimation(round) {
       if (round===1){
-        $('body').css('background', 'radial-gradient(circle, white, black)');
+        $('body').css('background', 'radial-gradient(ellipse farthest-corner at 45px 45px , white 0%, grey 50%, black 95%)');
       }  else if (round===2){
         $('body').css('background', 'radial-gradient(circle, white, #df00ff, black)');
+        $('.poisonous').velocity({
+            translateX: 360,
+          }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
+        $('.normal').velocity({
+              translateX: 360,
+            }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
+        $('.magic').velocity({
+              translateX: 360,
+            }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
       } else if (round===3){
-        $('body').css('background', 'radial-gradient(circle, white, #df00ff, #00ff5f, black)');
+        $('body').css('background', 'radial-gradient(ellipse farthest-corner at 45px 45px , #df00ff 0%, white 50%, #00ff5f 95%)');
       } else if (round===4){
         $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, black)');
       } else if (round===5){
@@ -200,8 +212,9 @@ $(() => {
     round.clearBoard();
     round.generateShrooms(round.roundNumber*20);
     round.setTimer();
-    eventHandlers.clickShrooms();
     round.roundAnimation(round.roundNumber);
+    eventHandlers.clickShrooms();
+
   }
 
 // check whether user can move on to the next round
