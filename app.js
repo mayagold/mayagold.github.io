@@ -54,7 +54,7 @@ $(() => {
           score++;
           // this could probably be shortened too,
           $(e.currentTarget).css('animation-name', 'spin');
-          $(e.currentTarget).css('animation-duration', '2s');
+          $(e.currentTarget).css('animation-duration', '4s');
           $(e.currentTarget).css('animation-iteration-count', '1');
           $(e.currentTarget).delay(1700).fadeOut();
           $('#show-power').text('Power: ' + score);
@@ -101,8 +101,9 @@ $(() => {
       });
     },
     newGame() {
-      score=5;
       $('#new-game-button').on('click', () => {
+        round.roundNumber=1;
+        score=5;
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
@@ -124,10 +125,10 @@ $(() => {
     generateShrooms(num) {
       for (i=0; i<num; i++) {
         const shroom = $('<img src="images/Mushroom.png"/>');
-        shroom.css('max-height', '50px');
-        shroom.css('animation-name', 'colorRotate');
-        shroom.css('animation-duration', '15s');
-        shroom.css('animation-iteration-count', '2');
+        shroom.css('max-height', '80px');
+        // shroom.css('animation-name', 'colorRotate');
+        // shroom.css('animation-duration', '15s');
+        // shroom.css('animation-iteration-count', '2');
         const left = (Math.random()*1000) + 'px';
         const top = (Math.random()*500) + 'px';
         // console.log(top);
@@ -184,16 +185,20 @@ $(() => {
         // $('.normal').css('animation-name', 'spin');
         // $('.normal').css('animation-duration', '3s');
         // $('.normal').css('animation-iteration-count', '10');
-      } else {
-        // console.log('working');
+      }  else if (round===2){
+        $('body').css('background', 'radial-gradient(circle, white, #df00ff, black)');
+      } else if (round===3){
+        $('body').css('background', 'radial-gradient(circle, white, #df00ff, #00ff5f, black)');
+      } else if (round===4){
+        $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, black)');
+      } else if (round===5){
+        $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, black)');
+      } else if (round===6){
+        $('body').css('background', 'radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, #ff00a0, black)');
+      } else if (round===7){
+        $('body').css('background', 'radial-gradient(circle, white, #00ffdf, #0020ff, #df00ff, #00ff5f, #ff00a0, #ffdf00, black)');
       }
-    //   else if (round===2){}
-    //   else if (round===3){}
-    //   else if (round===4){}
-    //   else if (round===5){}
-    //   else if (round===6){}
-    //   else if (round===7){}
-    // }
+
     }
   }
 
@@ -221,8 +226,8 @@ $(() => {
     } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 20) && (round.roundNumber===2)) || ((score >= 30) && (round.roundNumber===3)) || ((score >= 40) && (round.roundNumber===4)) || ((score >= 50) && (round.roundNumber===5)) || ((score >= 60) && (round.roundNumber===6)) ) {
       round.roundNext();
     } else if ((round.roundNumber===7) && (score >= 70)) {
-      round.roundNumber=1;
-      $('.game-container').css('display', 'none');
+      $('body').css('background', 'radial-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black)');
+      // $('.game-container').delay(10000).css('display', 'none');
       $('#modal-win').css('display', 'block');
       eventHandlers.newGame();
     }

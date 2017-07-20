@@ -1,6 +1,16 @@
 body {
   font-family: Comfortaa, cursive;
-  background-color: rgba(0,0,0,1);
+  background: radial-gradient(circle, white , black);
+  /*background: radial-gradient(circle, white, #df00ff, black);*/
+  /*background: radial-gradient(circle, white, #df00ff, #00ff5f, black);*/
+  /*background: radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, black);*/
+  /*background: radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, black);*/
+  /*background: radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, #ff00a0, black);*/
+  /*background: radial-gradient(circle, white, #00ffdf, #0020ff, #df00ff, #00ff5f, #ff00a0, #ffdf00, black);*/
+  /*background: radial-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black);*/
+  /*animation-name: colorRotate;
+  animation-duration: 10s;
+  animation-iteration-count: 3;*/
   color: rgba(255,255,255,.8);
 }
 
@@ -54,6 +64,7 @@ body {
 
 #modal-win {
   display: none;
+  background: rgba(0,0,0,0);
 }
 
 #modal-lose {
@@ -67,22 +78,24 @@ body {
 
 .mushroom-container {
   display: none;
+  margin-top: -600px;
 }
 
 h2 {
   font-family: Comfortaa, cursive;
   text-align: left;
   display: block;
-  font-size: 40px;
+  font-size: 20px;
   padding-left: 50px;
 }
 
 h3 {
-  font-family: Comfortaa, cursive;
-  font-size: 40px;
-  padding-right: 50px;
-  margin-top: -79px;
-  text-align: right;
+  font-family: 'Digital Dream Fat';
+  font-size: 200px;
+  marging-top: -140px;
+  /*padding-right: 50px;
+  margin-top: -79px;*/
+  text-align: center;
   display: block;
 }
 
@@ -118,10 +131,9 @@ h3 {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
-    transform: rotate(900deg);
-    filter: hue-rotate(360deg);
+    transform:  rotate(1800deg);
+    filter: hue-rotate(720deg);
   }
 }
 
@@ -136,7 +148,7 @@ h3 {
     transform: translateX(6px);
   }
   100% {
-    transform: translateY(6px);
+    transform: scale(.5) translateY(6px);
     filter: hue-rotate(360deg);
   }
 }
