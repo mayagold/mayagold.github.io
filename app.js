@@ -12,10 +12,12 @@
   // round 5: they move in all directions up/down/left/right on x/y axis
   // round 6: they move x/y/z
   // round 7: they disappear and reappear somewhere else on the page
-
+// make the backgrounds even cooler, play around with the gradients
+// create a footer with info. and links etc. c MG 2017 no mushrooms were consumed in the making of this universe.
 
 // Friday goals
-  // figure out the whole background situation ... wtf is that gonna be
+
+// media queries - format for cell phone
 
 
 // JQUERY WINDOW ONLOAD
@@ -126,9 +128,6 @@ $(() => {
       for (i=0; i<num; i++) {
         const shroom = $('<img src="images/Mushroom.png"/>');
         shroom.css('max-height', '80px');
-        // shroom.css('animation-name', 'colorRotate');
-        // shroom.css('animation-duration', '15s');
-        // shroom.css('animation-iteration-count', '2');
         const left = (Math.random()*1000) + 'px';
         const top = (Math.random()*500) + 'px';
         // console.log(top);
@@ -136,11 +135,11 @@ $(() => {
         shroom.css('margin-top', top)
         $('.mushroom-container').append(shroom);
         let typeOfShroom = Math.random();
-        if (typeOfShroom < .5) {
+        if (typeOfShroom < .6) {
           shroom.addClass('normal');
-        } else if ((typeOfShroom >= .5) && (typeOfShroom <.8)) {
+        } else if ((typeOfShroom >= .6) && (typeOfShroom <.89)) {
           shroom.addClass('magic');
-        } else if (typeOfShroom >= .8) {
+        } else if (typeOfShroom >= .89) {
           shroom.addClass('poisonous');
         }
       }
@@ -226,7 +225,10 @@ $(() => {
     } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 20) && (round.roundNumber===2)) || ((score >= 30) && (round.roundNumber===3)) || ((score >= 40) && (round.roundNumber===4)) || ((score >= 50) && (round.roundNumber===5)) || ((score >= 60) && (round.roundNumber===6)) ) {
       round.roundNext();
     } else if ((round.roundNumber===7) && (score >= 70)) {
-      $('body').css('background', 'radial-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black)');
+      $('body').css('background', 'linear-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black)');
+      $('body').css('animation-name', 'colorRotate');
+      $('body').css('animation-duration', '15s');
+      $('body').css('animation-iteration-count', '5');
       // $('.game-container').delay(10000).css('display', 'none');
       $('#modal-win').css('display', 'block');
       eventHandlers.newGame();

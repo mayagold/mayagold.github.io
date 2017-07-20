@@ -1,14 +1,8 @@
 body {
   font-family: Comfortaa, cursive;
   background: radial-gradient(circle, white , black);
-  /*background: radial-gradient(circle, white, #df00ff, black);*/
-  /*background: radial-gradient(circle, white, #df00ff, #00ff5f, black);*/
-  /*background: radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, black);*/
-  /*background: radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, black);*/
-  /*background: radial-gradient(circle, white, #0020ff, #df00ff, #00ff5f, #ffdf00, #ff00a0, black);*/
-  /*background: radial-gradient(circle, white, #00ffdf, #0020ff, #df00ff, #00ff5f, #ff00a0, #ffdf00, black);*/
-  /*background: radial-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black);*/
-  /*animation-name: colorRotate;
+/*
+  animation-name: colorRotate;
   animation-duration: 10s;
   animation-iteration-count: 3;*/
   color: rgba(255,255,255,.8);
