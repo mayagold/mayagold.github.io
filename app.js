@@ -106,6 +106,7 @@ $(() => {
       $('#new-game-button').on('click', () => {
         round.roundNumber=1;
         score=5;
+        $('h3').show();
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
@@ -174,16 +175,7 @@ $(() => {
     },
     roundAnimation(round) {
       if (round===1){
-        // console.log('called');
-        // $('.poisonous').css('animation-name', 'spin');
-        // $('.poisonous').css('animation-duration', '3s');
-        // $('.poisonous').css('animation-iteration-count', '10');
-        // $('.magic').css('animation-name', 'spin');
-        // $('.magic').css('animation-duration', '3s');
-        // $('.magic').css('animation-iteration-count', '10');
-        // $('.normal').css('animation-name', 'spin');
-        // $('.normal').css('animation-duration', '3s');
-        // $('.normal').css('animation-iteration-count', '10');
+        $('body').css('background', 'radial-gradient(circle, white, black)');
       }  else if (round===2){
         $('body').css('background', 'radial-gradient(circle, white, #df00ff, black)');
       } else if (round===3){
@@ -226,6 +218,7 @@ $(() => {
       round.roundNext();
     } else if ((round.roundNumber===7) && (score >= 70)) {
       $('body').css('background', 'linear-gradient( circle, white 3%,  #5f00ff, #0020ff, #00ffdf, #df00ff, #ff00a0, #00ff5f, #ffdf00, black)');
+      $('#h3').hide();
       $('body').css('animation-name', 'colorRotate');
       $('body').css('animation-duration', '15s');
       $('body').css('animation-iteration-count', '5');

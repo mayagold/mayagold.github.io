@@ -96,7 +96,7 @@ h3 {
 .poisonous {
   display: block;
   position: absolute;
-  background: #df00ff;
+  /*background: #df00ff;*/
 }
 
 .normal {
@@ -107,7 +107,7 @@ h3 {
 .magic {
   display: block;
   position: absolute;
-  background: #00ff5f;
+  /*background: #00ff5f;*/
 }
 
 
