@@ -182,10 +182,11 @@ $(() => {
     roundAnimation(round) {
       if (round===1){
         $('body').css('background', 'url("https://media.giphy.com/media/1332vkhv8JWiXK/giphy.gif")');
+
       }  else if (round===2){
         $('body').css('background', 'url("https://media.giphy.com/media/1lvaLip8VKiqc/giphy.gif")');
-        $('body').css('background-size', 'cover');
-        $('body').css('background-position', 'bottom');
+        // $('body').css('background-size', 'cover');
+
         // $('.poisonous').velocity({
         //     translateX: 360,
         //   }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
@@ -197,23 +198,21 @@ $(() => {
         //     }, {duration: 3000, loop: 10, delay: 0}).velocity('reverse');
       } else if (round===3){
         $('body').css('background', 'url("https://media.giphy.com/media/b1j3ZGwqzlrdC/giphy.gif")');
-        $('body').css('background-size', 'cover');
-        $('body').css('background-position', 'center');
+        // $('body').css('background-size', 'cover');
+        // $('body').css('background-position', 'center');
       } else if (round===4){
         $('body').css('background', 'url("https://media.giphy.com/media/26xBEez1vnVb2WgBq/giphy.gif")');
       } else if (round===5){
         $('body').css('background', 'url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('body').css('background-position', 'center');
+
         // building
       } else if (round===6){
         $('body').css('background', 'url("https://media.giphy.com/media/xTiTnnEDnHkidOckcE/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('body').css('background-position', 'center');
       } else if (round===7){
         $('body').css('background', 'url("https://media.giphy.com/media/UKVS1ckVg6uEE/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('body').css('background-position', 'center');
       }
 
     }
@@ -224,7 +223,7 @@ $(() => {
   const setUpRound = () => {
     // $('#show-round').text('Round '+ round.roundNumber);
     round.clearBoard();
-    round.generateShrooms(round.roundNumber*20);
+    round.generateShrooms(20);
     round.setTimer();
     round.roundAnimation(round.roundNumber);
     eventHandlers.clickShrooms();
@@ -244,13 +243,14 @@ $(() => {
     } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 20) && (round.roundNumber===2)) || ((score >= 30) && (round.roundNumber===3)) || ((score >= 40) && (round.roundNumber===4)) || ((score >= 50) && (round.roundNumber===5)) || ((score >= 60) && (round.roundNumber===6)) ) {
       round.roundNext();
     } else if ((round.roundNumber===7) && (score >= 70)) {
+      $('.mushroom-container.').empty();
       $('body').css('background', 'url("https://media.giphy.com/media/R57GovrvicbrG/giphy.gif")');
       $('body').css('background-size', 'cover');
       $('body').css('background-position', 'center');
       $('#h3').hide();
-      $('body').css('animation-name', 'colorRotate');
-      $('body').css('animation-duration', '15s');
-      $('body').css('animation-iteration-count', '5');
+      // $('body').css('animation-name', 'colorRotate');
+      // $('body').css('animation-duration', '15s');
+      // $('body').css('animation-iteration-count', '5');
       // $('.game-container').delay(10000).css('display', 'none');
       $('#modal-win').css('display', 'block');
       eventHandlers.newGame();
