@@ -70,10 +70,13 @@ MOVING THROUGH EACH ROUND
 
 At the end of each round, a modal will pop up.
 
+![Modal: Next Round](/screen_captures/next_round_modal.png?raw=true)
+
     If you have enough points to move on to the next round, a message will appear that will tell you you can move on, and you do so by clicking a button with an event listener attached, which triggers the next round.
 
     The body background is reassigned for each new round to display a different gif.
 
+![Modal: Repeat Round](/screen_captures/repeat_modal.png?raw=true)
     If you don't have enough points, the modal will prompt you to repeat the round.
 
 ********************************************************
@@ -85,6 +88,8 @@ ROUND BY ROUND BREAKDOWN
 ********************************************************
 
 ROUND ONE
+
+![Round 1](/screen_captures/round1_capture.png?raw=true)
 
 No background layer showing.
 Timer starts at 30 seconds and immediately begins countdown.
@@ -102,6 +107,8 @@ If your score is high enough, a modal will pop up to congratulate you. A new bac
 
 ROUND 2
 
+![Round 2](/screen_captures/round2_capture.png?raw=true)
+
 Starts with cat gif background.
 Timer starts at 30 seconds and immediately begins countdown.
 setUpRound function generates a number of mushrooms roundNumber*10, so 20 mushrooms.
@@ -118,6 +125,8 @@ If your score is high enough, a modal will pop up to congratulate you.
 
 ROUND 3
 
+![Round 3](/screen_captures/round3_capture.png?raw=true)
+
 Timer starts at 30 seconds and immediately begins countdown.
 setUpRound function generates a number of mushrooms roundNumber*10, so 30 mushrooms.
 Mushrooms moving across the screen diagonally.
@@ -132,6 +141,8 @@ If your score is high enough, a modal will pop up to congratulate you.
 ********************************************************
 
 ROUND 4
+
+![Round 4](/screen_captures/round4_capture.png?raw=true)
 
 Timer starts at 30 seconds and immediately begins countdown.
 setUpRound function generates a number of mushrooms roundNumber*10, so 40 mushrooms.
@@ -149,6 +160,8 @@ If your score is high enough, a modal will pop up to congratulate you.
 
 ROUND 5
 
+![Round 5](/screen_captures/round5_capture.png?raw=true)
+
 Timer starts at 30 seconds and immediately begins countdown.
 setUpRound function generates a number of mushrooms roundNumber*10, so 50 mushrooms.
 Mushrooms moving across the screen in a more complex pattern.
@@ -163,6 +176,8 @@ If your score is high enough, a modal will pop up to congratulate you.
 ********************************************************
 
 ROUND 6
+
+![Round 6](/screen_captures/round6_capture.png?raw=true)
 
 Timer starts at 30 seconds and immediately begins countdown.
 setUpRound function generates a number of mushrooms roundNumber*10, so 60 mushrooms.
@@ -180,6 +195,8 @@ If your score is high enough, a modal will pop up to congratulate you.
 
 ROUND 7
 
+![Round 7](/screen_captures/round7_capture.png?raw=true)
+
 Starts with all previously unlocked layers showing.
 Timer starts at 30 seconds and immediately begins countdown.
 setUpRound function generates a number of mushrooms roundNumber*10, so 70 mushrooms.
@@ -194,6 +211,8 @@ If your score is high enough, the win modal will pop up.
 *******************************************************
 *******************************************************
 
+![Modal: You Win](/screen_captures/win_modal.png?raw=true)
+
 Win state: when all seven rounds have been completed and all colors are on the page.
 
 Modal pops up: you have fueled Mr. Fun Guy's spaceship and you are off to explore the universe.
@@ -202,6 +221,8 @@ Button gives you the choice to play again.
 
 *******************************************************
 *******************************************************
+
+![Modal: You Lose](/screen_captures/lose_modal.png?raw=true)
 
 Loss state: if your score falls below zero
 
