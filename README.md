@@ -37,6 +37,8 @@ Premise:
 
 Breakdown:
 
+![Modal: Start Game](/screen_captures/pageload.png?raw=true)
+
 The page loads and displays a start modal. This modal contains the directions for the game, instructing the player to click on the mushrooms that appear on screen, and a start button.
 
 An event listener attached to the start button triggers audio.
@@ -287,3 +289,9 @@ CSS: Styling the modals so that they appear centered on the page and the text st
 
 ********************************************************
 ********************************************************
+
+ONGOING GOALS
+
+* Media queries so you can play it on your phone
+* Improve CSS
+* Add audio playlist in HTML (rather than two songs using jQuery)

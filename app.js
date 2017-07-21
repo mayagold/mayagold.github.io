@@ -29,11 +29,11 @@ $(() => {
       score=5;
       $('.start-button').on('click', () => {
         // start audio
-        let music = $('<audio src="images/tipper.mp3" type="audio/mpeg">');
+        let music = $('<audio src="audio/tipper.mp3" type="audio/mpeg">');
         $('body').append(music);
         $('audio')[0].play();
         $('audio')[0].addEventListener('ended',function(){
-          $('audio')[0].src = "images/antennae.mp3";
+          $('audio')[0].src = "audio/antennae.mp3";
           $('audio')[0].type = "audio/mpeg";
           $('audio')[0].pause();
           $('audio')[0].load();
@@ -82,7 +82,7 @@ $(() => {
           // console.log('win point');
           // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
-          $(e.currentTarget).remove();
+          $(e.currentTarget).css('opacity', '0');
           if (round.roundNumber===1) {
             $('#show-power').text('Mr. Fun Guy says: Fasten your seatbelt... Your points: ' + score);
           } else if (round.roundNumber===2) {
@@ -224,9 +224,9 @@ $(() => {
             translate3d: (100,100,100),
           }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
         $('.normal').velocity({
-          scale: 1.5,
-          translate3d: (100,100,100),
-        }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+            scale: 1.5,
+            translate3d: (100,100,100),
+          }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
         $('.magic').velocity({
           scale: 1.5,
           translate3d: (100,100,100),
@@ -288,21 +288,21 @@ $(() => {
         $('body').css('background', 'url("https://media.giphy.com/media/26BkLPYsD1Byn8hgI/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
-          scale: 3,
+          scale: 2,
           opacity: 0,
           }, {
           duration: 1000,
           loop: 30},
         );
         $('.normal').velocity({
-          scale: 5,
+          scale: 3,
           opacity: .2,
           }, {
           duration: 2000,
           loop: 15},
         );
         $('.magic').velocity({
-          scale: 2,
+          scale: 1.3,
           opacity: .1,
           }, {
           duration: 1500,
