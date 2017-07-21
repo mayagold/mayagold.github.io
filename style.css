@@ -1,11 +1,10 @@
 body {
   font-family: Comfortaa, cursive;
   background: radial-gradient(ellipse farthest-corner at 45px 45px , white 0%, grey 50%, black 95%);
-/*
   animation-name: colorRotate;
-  animation-duration: 10s;
-  animation-iteration-count: 3;*/
-  color: rgba(255,255,255,.8);
+  animation-duration: 15s;
+  animation-iteration-count: 2;
+  color: rgba(255,255,255,.6);
 }
 
 .modal {
@@ -21,11 +20,9 @@ body {
   padding: 20px;
 }
 
-/*.modal * {
-  display: flex;
-  vertical-align:baseline;
-  flex-wrap: wrap;
-}*/
+ul {
+  display: none;
+}
 
 
 .start-button {
@@ -58,7 +55,7 @@ body {
 
 #modal-win {
   display: none;
-  background: rgba(0,0,0,0);
+  background: rgba(0,0,0,0.2);
 }
 
 #modal-lose {
@@ -96,7 +93,8 @@ h3 {
 .poisonous {
   display: block;
   position: absolute;
-  background: #df00ff;
+  /*background: #df00ff;*/
+
 }
 
 .normal {
@@ -107,7 +105,7 @@ h3 {
 .magic {
   display: block;
   position: absolute;
-  background: #00ff5f;
+  /*background: #00ff5f;*/
 }
 
 
@@ -125,9 +123,13 @@ h3 {
   0% {
     transform: rotate(0deg);
   }
+  50% {
+    opacity: .5
+  }
   100% {
     transform:  rotate(1800deg);
     filter: hue-rotate(720deg);
+    opacity: 0
   }
 }
 
@@ -137,6 +139,7 @@ h3 {
   }
   50% {
     transform: translateY(6px);
+    opacity: .5
   }
   75% {
     transform: translateX(6px);
@@ -144,47 +147,6 @@ h3 {
   100% {
     transform: scale(.5) translateY(6px);
     filter: hue-rotate(360deg);
+    opacity: 0
   }
 }
-
-  /*@keyframes slideSlow {
-    75% {
-      margin-left: 25%;
-    }
-    from {
-      margin-left: 100%;
-    }
-    to {
-      margin-left: 0%;
-    }
-  }*/
-  /*@@keyframes slideMed {
-    75% {
-      margin-left: 55%;
-    }
-    from {
-      margin-left: 100%;
-    }
-    to {
-      margin-left: 0%;
-    }
-  }
-
-  @@keyframes colorFlash {
-  25% {background-color: red}
-  50% {background: blue}
-  75% {background: yellow}
-  100% {background: purple}
-  }*/
-
-
-
-/*Colors*/
-
-/*purple: #df00ff */
-/*yellow: #ffdf00*/
-/*pink: #ff00a0
-teal: #00ffdf
-indigo: #5f00ff
-green: #00ff5f
-blue: #0020ff*/
