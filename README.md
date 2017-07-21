@@ -47,20 +47,20 @@ An event listener attached to the start button triggers audio.
 
 Clicking on the start button also hides the start modal, and displays the game space. A timer immediately begins counting down from 30 seconds and 10*(roundNumber) mushrooms appear on screen (10 mushrooms for round 1, 20 for round 2, etc.). They have different animations for each round.
 
-    The mushrooms are randomly assigned a class of "normal", "poisonous," or "magic" using Math.random().
-    The mushrooms are randomly assigned a top and left margin using Math.random() - this gives the illusion that they are "scattered" across the screen randomly.
+The mushrooms are randomly assigned a class of "normal", "poisonous," or "magic" using Math.random().
+The mushrooms are randomly assigned a top and left margin using Math.random() - this gives the illusion that they are "scattered" across the screen randomly.
 
-    The mushrooms are given different animations for each round, using velocity.js.
+The mushrooms are given different animations for each round, using velocity.js.
 
 An event listener is attached to each mushroom. Clicking on any mushroom will adjust the player's score.
 
-    Clicking on a magic mushroom will increase your points by 1. The magic mushroom will spin and change color, rotating through the rainbow, and then become opaque (using css animation).
+Clicking on a magic mushroom will increase your points by 1. The magic mushroom will spin and change color, rotating through the rainbow, and then become opaque (using css animation).
 
-    Clicking on a poisonous one will decrease your points by 1. The poisonous mushroom will vibrate and become opaque (using css animation).
+Clicking on a poisonous one will decrease your points by 1. The poisonous mushroom will vibrate and become opaque (using css animation).
 
-    Clicking on a normal one will not change the score. It will remove the normal mushroom from the page.
+Clicking on a normal one will not change the score. It will remove the normal mushroom from the page.
 
-    Each mushroom can only be clicked on once. Then the event listener for that mushroom is turned off.
+Each mushroom can only be clicked on once. Then the event listener for that mushroom is turned off.
 
 
 ********************************************************
@@ -72,9 +72,9 @@ At the end of each round, a modal will pop up.
 
 ![Modal: Next Round](/screen_captures/next_round_modal.png?raw=true)
 
-    If you have enough points to move on to the next round, a message will appear that will tell you you can move on, and you do so by clicking a button with an event listener attached, which triggers the next round.
+If you have enough points to move on to the next round, a message will appear that will tell you you can move on, and you do so by clicking a button with an event listener attached, which triggers the next round.
 
-    The body background is reassigned for each new round to display a different gif.
+The body background is reassigned for each new round to display a different gif.
 
 ![Modal: Repeat Round](/screen_captures/repeat_modal.png?raw=true)
     If you don't have enough points, the modal will prompt you to repeat the round.
