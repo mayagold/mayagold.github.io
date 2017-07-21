@@ -2,21 +2,6 @@
 // console.log('test');
 // $
 
-// animations
-// make song playlist
-// change first text
-
-  // round 5: they move in all directions up/down/left/right on x/y axis
-  // round 6: they move x/y/z
-  // round 7: they disappear and reappear somewhere else on the page
-// create a footer with info.
-// no mushrooms were consumed in the making of this universe.
-
-// Sunday goals
-
-// media queries - format for cell phone
-
-
 // JQUERY WINDOW ONLOAD
 $(() => {
 // Declare score and time variables outside of any object
