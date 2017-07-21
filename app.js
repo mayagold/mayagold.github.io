@@ -357,7 +357,6 @@ $(() => {
       eventHandlers.newGame();
     }
   }
-
   // turn on event listener for start button when the page loads!
   eventHandlers.startGame();
 
