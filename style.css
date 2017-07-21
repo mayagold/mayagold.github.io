@@ -24,7 +24,6 @@ ul {
   display: none;
 }
 
-
 .start-button {
   font-family: Comfortaa, cursive;
   font-weight: bolder;
@@ -84,8 +83,6 @@ h3 {
   font-family: 'Digital Dream Fat';
   font-size: 200px;
   marging-top: -140px;
-  /*padding-right: 50px;
-  margin-top: -79px;*/
   text-align: center;
   display: block;
 }
@@ -93,7 +90,6 @@ h3 {
 .poisonous {
   display: block;
   position: absolute;
-  /*background: #df00ff;*/
 
 }
 
@@ -105,19 +101,14 @@ h3 {
 .magic {
   display: block;
   position: absolute;
-  /*background: #00ff5f;*/
+
 }
-
-
-/*keyframes animations - move to separate css file later ? */
-
 
 @keyframes colorRotate {
   100% {
     -webkit-filter: hue-rotate(360deg);
   }
 }
-
 
 @keyframes spin {
   0% {

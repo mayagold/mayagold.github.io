@@ -24,13 +24,6 @@ $(() => {
           $('audio')[0].load();
           $('audio')[0].play();
         });
-        // $('audio')[0].addEventListener('ended',function(){
-        //   $('audio')[0].src = "images/thriftworks.mp3";
-        //   $('audio')[0].type = "audio/mpeg";
-        //   $('audio')[0].pause();
-        //   $('audio')[0].load();
-        //   $('audio')[0].play();
-        // });
         $('#modal-intro').detach();
         $('.modal').hide();
         $('.game-container').css('display', 'block');
