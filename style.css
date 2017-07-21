@@ -1,5 +1,5 @@
 body {
-  font-family: Comfortaa, cursive;
+  font-family: "Original Surfer", cursive;
   background: radial-gradient(ellipse farthest-corner at 45px 45px , white 0%, grey 50%, black 95%);
   animation-name: colorRotate;
   animation-duration: 15s;

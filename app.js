@@ -82,7 +82,7 @@ $(() => {
           // console.log('win point');
           // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
-          $(e.currentTarget).css('opacity', '0.2');
+          $(e.currentTarget).remove();
           if (round.roundNumber===1) {
             $('#show-power').text('Mr. Fun Guy says: Fasten your seatbelt... Your points: ' + score);
           } else if (round.roundNumber===2) {
@@ -92,7 +92,7 @@ $(() => {
           } else if (round.roundNumber===4) {
               $('#show-power').text('Mr. Fun Guy says: Dude... Look at my hand... Your points: ' + score);
           } else if (round.roundNumber===5) {
-            $('#show-power').text('Mr. Fun Guy says: I could watch this smoke billowing for hours... Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: That smoke looks cool... Your points: ' + score);
           } else if (round.roundNumber===6) {
             $('#show-power').text('Mr. Fun Guy says: I can see my own thoughts... Your points: ' + score);
           } else if (round.roundNumber===7) {
@@ -209,13 +209,13 @@ $(() => {
       if (round===1){
         $('body').css('background', 'black');
         $('.poisonous').velocity({
-            scale: 10,
+            scale: 3,
         }, {duration: 30000, delay: 0});
         $('.normal').velocity({
-          scale: 10,
+          scale: 3,
       }, {duration: 30000, delay: 0});
         $('.magic').velocity({
-          scale: 10,
+          scale: 3,
       }, {duration: 30000, delay: 0});
       }  else if (round===2){
         $('body').css('background', 'url("https://media.giphy.com/media/26xBEez1vnVb2WgBq/giphy.gif")');
@@ -225,7 +225,7 @@ $(() => {
           }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
         $('.normal').velocity({
           scale: 1.5,
-          translate3d: (100,100,100)
+          translate3d: (100,100,100),
         }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
         $('.magic').velocity({
           scale: 1.5,
@@ -269,17 +269,17 @@ $(() => {
         $('body').css('background', 'url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
-            scale: 3,
+            scale: 2,
             rotateZ: 1800,
             translate3d: 50
           }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
         $('.normal').velocity({
-          scale: 2,
+          scale: 1,
           rotateZ: 3600,
           translate3d: 50
         }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
         $('.magic').velocity({
-          scale: 2.5,
+          scale: 1.5,
           rotateZ: 2520,
           translate3d: 50
         }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
@@ -314,6 +314,8 @@ $(() => {
         $('.poisonous').velocity({
           scale: -1,
           opacity: .3,
+          translateZ: 40,
+          rotateZ: 20
           }, {
           duration: 500,
           loop: 60},
@@ -321,6 +323,8 @@ $(() => {
         $('.normal').velocity({
           scale: -.5,
           opacity: 0,
+          translateZ: -70,
+          rotateZ: -20
           }, {
           duration: 500,
           loop: 60},
@@ -328,14 +332,12 @@ $(() => {
         $('.magic').velocity({
           scale: 1.2,
           opacity: .1,
+          translateZ: 20,
+          rotateZ: 20
           }, {
           duration: 500,
           loop: 60},
         );
-
-
-
-
       }
     }
   }
