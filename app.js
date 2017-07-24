@@ -283,7 +283,6 @@ $(() => {
   }
 
 // the actual function that starts a new round
-
   const setUpRound = () => {
     // $('#show-round').text('Round '+ round.roundNumber);
     round.clearBoard();
@@ -291,11 +290,9 @@ $(() => {
     round.setTimer();
     round.roundAnimation(round.roundNumber);
     eventHandlers.clickShrooms();
-
   }
 
 // check whether user can move on to the next round
-
   const checkForWin = () => {
     if (score <= 0) {
       round.roundNumber=1;
@@ -307,13 +304,8 @@ $(() => {
     } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 15) && (round.roundNumber===2)) || ((score >= 20) && (round.roundNumber===3)) || ((score >= 25) && (round.roundNumber===4)) || ((score >= 30) && (round.roundNumber===5)) || ((score >= 35) && (round.roundNumber===6)) ) {
       round.roundNext();
     } else if ((round.roundNumber===7) && (score >= 40)) {
-      $('body').css('background', 'url("https://media.giphy.com/media/R57GovrvicbrG/giphy.gif")');
-      $('body').css('background-size', 'cover');
-      $('body').css('background-position', 'center');
+      $('body').css({ 'background': 'url("https://media.giphy.com/media/R57GovrvicbrG/giphy.gif")', 'background-size': 'cover', 'background-position': 'center' });
       $('#h3').hide();
-      $('body').css('animation-name', 'colorRotate');
-      $('body').css('animation-duration', '15s');
-      $('body').css('animation-iteration-count', '5');
       $('.game-container').delay(10000).css('display', 'none');
       $('#modal-win').css('display', 'block');
       eventHandlers.newGame();
