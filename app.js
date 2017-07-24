@@ -62,19 +62,19 @@ $(() => {
         } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
           $(e.currentTarget).css('opacity', '0');
           if (round.roundNumber===1) {
-            $('#show-power').text('Mr. Fun Guy says: Fasten your seatbelt... Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           } else if (round.roundNumber===2) {
-            $('#show-power').text('Mr. Fun Guy says: I think this cat can see into my soul... Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           } else if (round.roundNumber===3) {
-            $('#show-power').text('Mr. Fun Guy says: I can\'t tell if the mushrooms are moving, or I am... Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           } else if (round.roundNumber===4) {
-              $('#show-power').text('Mr. Fun Guy says: Dude... Look at my hand... Your points: ' + score);
+              $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           } else if (round.roundNumber===5) {
-            $('#show-power').text('Mr. Fun Guy says: That smoke looks cool... Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           } else if (round.roundNumber===6) {
-            $('#show-power').text('Mr. Fun Guy says: I can see my own thoughts... Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           } else if (round.roundNumber===7) {
-            $('#show-power').text('Mr. Fun Guy says: Now we\'re getting somewhere!! Your points: ' + score);
+            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           }
           // console.log('no change');
           // console.log(score);
@@ -148,9 +148,9 @@ $(() => {
         let typeOfShroom = Math.random();
         if (typeOfShroom < .6) {
           shroom.addClass('normal');
-        } else if ((typeOfShroom >= .6) && (typeOfShroom <.89)) {
+        } else if ((typeOfShroom >= .6) && (typeOfShroom <.92)) {
           shroom.addClass('magic');
-        } else if (typeOfShroom >= .89) {
+        } else if (typeOfShroom >= .92) {
           shroom.addClass('poisonous');
         }
       }
@@ -226,7 +226,7 @@ $(() => {
         }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
         // $('body').css('background-position', 'center');
       } else if (round===4) {
-        $('body').css('background', 'url("https://media.giphy.com/media/3o6Zt5EmXj7jlzdFwQ/giphy.gif")');
+        $('body').css('background', 'url("https://media.giphy.com/media/126jxQSflEozPW/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
             scale: 1.5,
@@ -244,7 +244,7 @@ $(() => {
           translateY: 150
         }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
       } else if (round===5){
-        $('body').css('background', 'url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif")');
+        $('body').css('background', 'url("https://media.giphy.com/media/U3WiLFkGIS36M/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
             scale: 2,
@@ -287,7 +287,7 @@ $(() => {
           loop: 23},
         );
       } else if (round===7){
-        $('body').css('background', 'url("https://media.giphy.com/media/3o7WTFmAMnKd7DyrQY/giphy.gif")');
+        $('body').css('background', 'url("https://media.giphy.com/media/xUPGczaIFcIXgAVK4o/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
           scale: -1,
@@ -325,7 +325,7 @@ $(() => {
   const setUpRound = () => {
     // $('#show-round').text('Round '+ round.roundNumber);
     round.clearBoard();
-    round.generateShrooms(round.roundNumber*10);
+    round.generateShrooms(15);
     round.setTimer();
     round.roundAnimation(round.roundNumber);
     eventHandlers.clickShrooms();
@@ -340,11 +340,11 @@ $(() => {
       $('.game-container').css('display', 'none');
       $('#modal-lose').css('display', 'block');
       eventHandlers.restartGame();
-    }  else if ( ((round.roundNumber === 1) && (score < 10)) ||((round.roundNumber===2) && (score<15)) || ((round.roundNumber=== 3 ) && (score < 25)) || ((round.roundNumber===4 ) && (score < 35)) || ((round.roundNumber=== 5 ) && (score < 45))  || ((round.roundNumber===6 ) && (score < 55)) || ((round.roundNumber===7 ) && (score < 66)) )  {
+    }  else if ( ((round.roundNumber === 1) && (score < 10)) ||((round.roundNumber===2) && (score<15)) || ((round.roundNumber=== 3 ) && (score < 20)) || ((round.roundNumber===4 ) && (score < 25)) || ((round.roundNumber=== 5 ) && (score < 30))  || ((round.roundNumber===6 ) && (score < 35)) || ((round.roundNumber===7 ) && (score < 40)) )  {
       round.roundRepeat();
-    } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 15) && (round.roundNumber===2)) || ((score >= 25) && (round.roundNumber===3)) || ((score >= 35) && (round.roundNumber===4)) || ((score >= 45) && (round.roundNumber===5)) || ((score >= 55) && (round.roundNumber===6)) ) {
+    } else if ( ((score >= 10) && (round.roundNumber===1)) || ((score >= 15) && (round.roundNumber===2)) || ((score >= 20) && (round.roundNumber===3)) || ((score >= 25) && (round.roundNumber===4)) || ((score >= 30) && (round.roundNumber===5)) || ((score >= 35) && (round.roundNumber===6)) ) {
       round.roundNext();
-    } else if ((round.roundNumber===7) && (score >= 66)) {
+    } else if ((round.roundNumber===7) && (score >= 40)) {
       $('body').css('background', 'url("https://media.giphy.com/media/R57GovrvicbrG/giphy.gif")');
       $('body').css('background-size', 'cover');
       $('body').css('background-position', 'center');
