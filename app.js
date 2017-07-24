@@ -30,7 +30,7 @@ $(() => {
         $('.mushroom-container').css('display', 'block');
         $('.start-button').off();
         setUpRound();
-    })
+      })
     },
     // clicking on mushrooms -- changes the score based on their class
     clickShrooms() {
@@ -39,43 +39,21 @@ $(() => {
         $(e.currentTarget).off();
         if (($(e.currentTarget).attr('class') === 'poisonous velocity-animating') || ($(e.currentTarget).attr('class') === 'poisonous')) {
           score--;
-          // this could probably be shortened into one line,
-          $(e.currentTarget).css('animation-name', 'vibrate');
-          $(e.currentTarget).css('animation-duration', '.1s');
-          $(e.currentTarget).css('animation-iteration-count', '20');
-          $(e.currentTarget).css('opacity', '.2');
+          $(e.currentTarget).css({'animation-name': 'vibrate', 'animation-duration': '.1s', 'animation-iteration-count': '20', 'opacity': '.2'
+          });
           // console.log('clicking');
           $('#show-power').text('Mr. Fun Guy says: That one was poisonous! Your points: ' + score );
           // console.log('lose point');
           // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'magic') || ($(e.currentTarget).attr('class') === 'magic velocity-animating')) {
           score++;
-          // this could probably be shortened too,
-          // $(e.currentTarget).velocity('stop');
-          $(e.currentTarget).css('animation-name', 'spin');
-          $(e.currentTarget).css('animation-duration', '10s');
-          $(e.currentTarget).css('animation-iteration-count', '1');
-          $(e.currentTarget).css('opacity', '.2');
+          $(e.currentTarget).css({ 'animation-name': 'spin', 'animation-duration': '10s', 'animation-iteration-count': '1', 'opacity': '.2'});
           $('#show-power').text('Mr. Fun Guy says: You found a magic mushroom! Your points: ' + score);
           // console.log('win point');
           // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
           $(e.currentTarget).css('opacity', '0');
-          if (round.roundNumber===1) {
-            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          } else if (round.roundNumber===2) {
-            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          } else if (round.roundNumber===3) {
-            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          } else if (round.roundNumber===4) {
-              $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          } else if (round.roundNumber===5) {
-            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          } else if (round.roundNumber===6) {
-            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          } else if (round.roundNumber===7) {
-            $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          }
+          $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
           // console.log('no change');
           // console.log(score);
         }
@@ -186,135 +164,121 @@ $(() => {
     roundAnimation(round) {
       if (round===1){
         $('body').css('background', 'black');
-        $('.poisonous').velocity({
-            scale: 3,
-        }, {duration: 30000, delay: 0});
-        $('.normal').velocity({
-          scale: 3,
-      }, {duration: 30000, delay: 0});
-        $('.magic').velocity({
-          scale: 3,
-      }, {duration: 30000, delay: 0});
+        animations.grow($('.poisonous'));
+        animations.grow($('.magic'));
+        animations.grow($('.normal'));
       }  else if (round===2){
         $('body').css('background', 'url("https://media.giphy.com/media/26xBEez1vnVb2WgBq/giphy.gif")');
-        $('.poisonous').velocity({
-            scale: 1.5,
-            translate3d: (100,100,100),
-          }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        $('.normal').velocity({
-            scale: 1.5,
-            translate3d: (100,100,100),
-          }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        $('.magic').velocity({
-          scale: 1.5,
-          translate3d: (100,100,100),
-        }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+        animations.wavey($('.poisonous'));
+        animations.wavey($('.magic'));
+        animations.wavey($('.normal'));
       } else if (round===3){
         $('body').css('background', 'url("https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('.poisonous').velocity({
-            scale: 2,
-            rotateZ: 1800,
-            translate3d: 50
-          }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
-        $('.normal').velocity({
-          scale: 1,
-          rotateZ: 3600,
-          translate3d: 50
-        }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
-        $('.magic').velocity({
-          scale: 1.5,
-          rotateZ: 2520,
-          translate3d: 50
-        }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
+        animations.spin($('.poisonous'));
+        animations.spin($('.magic'));
+        animations.spin($('.normal'));
       } else if (round===4) {
         $('body').css('background', 'url("https://media.giphy.com/media/126jxQSflEozPW/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('.poisonous').velocity({
-            scale: 1.5,
-            translateX: -140
-          }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        $('.normal').velocity({
-          scale: 1.5,
-          translateX: -140
-        }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        $('.magic').velocity({
-          scale: 1.5,
-          translateX: -140
-        }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+        animations.slideHoriz($('.poisonous'));
+        animations.slideHoriz($('.magic'));
+        animations.slideHoriz($('.normal'));
       } else if (round===5){
         $('body').css('background', 'url("https://media.giphy.com/media/U3WiLFkGIS36M/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('.poisonous').velocity({
-            scale: 1.5,
-            translateX: -50,
-            translateY: 150
-          }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        $('.normal').velocity({
-          scale: 1.5,
-          translateX: -50,
-          translateY: 150
-        }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        $('.magic').velocity({
-          scale: 1.5,
-          translateX: -50,
-          translateY: 150
-        }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+        animations.slideDiag($('.poisonous'));
+        animations.slideDiag($('.magic'));
+        animations.slideDiag($('.normal'));
       } else if (round===6){
         $('body').css('background', 'url("https://media.giphy.com/media/26BkLPYsD1Byn8hgI/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('.poisonous').velocity({
-          scale: 2,
-          opacity: 0,
-          }, {
-          duration: 1000,
-          loop: 30},
-        );
-        $('.normal').velocity({
-          scale: 3,
-          opacity: .2,
-          }, {
-          duration: 2000,
-          loop: 15},
-        );
-        $('.magic').velocity({
-          scale: 1.3,
-          opacity: .1,
-          }, {
-          duration: 1500,
-          loop: 23},
-        );
+        animations.disappearPoison($('.poisonous'));
+        animations.disappearMagic($('.magic'));
+        animations.disappearNormal($('.normal'));
       } else if (round===7){
         $('body').css('background', 'url("https://media.giphy.com/media/xUPGczaIFcIXgAVK4o/giphy.gif")');
         $('body').css('background-size', 'cover');
-        $('.poisonous').velocity({
-          scale: -1,
-          opacity: .3,
-          translateZ: 40,
-          rotateZ: 20
-          }, {
-          duration: 500,
-          loop: 60},
-        );
-        $('.normal').velocity({
-          scale: -.5,
-          opacity: 0,
-          translateZ: -70,
-          rotateZ: -20
-          }, {
-          duration: 500,
-          loop: 60},
-        );
-        $('.magic').velocity({
-          scale: 1.2,
-          opacity: .1,
-          translateZ: 20,
-          rotateZ: 20
-          }, {
-          duration: 500,
-          loop: 60},
-        );
+        animations.popPoison($('.poisonous'));
+        animations.popMagic($('.magic'));
+        animations.popNormal($('.normal'));
       }
+    }
+  }
+
+  const animations = {
+    grow(type) {
+          type.velocity({
+          scale: 3,
+        }, {duration: 30000, delay: 0});
+    },
+    wavey(type) {
+      type.velocity({
+        scale: 1.5,
+        translate3d: (100,100,100),
+      }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+    },
+    spin(type) {
+      type.velocity({
+        scale: 2,
+        rotateZ: 3600,
+        translate3d: 50,
+      }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
+    },
+    slideHoriz(type) {
+      type.velocity({
+        scale: 1.5,
+        translateX: -140
+      }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+    },
+    slideDiag(type) {
+      type.velocity({
+        scale: 1.5,
+        translateX: -50,
+        translateY: 150
+      }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
+    },
+    disappearPoison(type) {
+      type.velocity({
+        scale: 2,
+        opacity: 0,
+        }, {  duration: 1000, loop: 30},);
+    },
+    disappearNormal(type) {
+      type.velocity({
+        scale: 3,
+        opacity: .2,
+        }, { duration: 2000, loop: 15}, );
+    },
+    disappearMagic(type) {
+      type.velocity({
+        scale: 1.3,
+        opacity: .1,
+      }, {  duration: 1500,  loop: 23}, );
+    },
+    popPoison(type) {
+      type.velocity({
+        scale: -1,
+        opacity: .3,
+        translateZ: 40,
+        rotateZ: 20
+        }, {  duration: 500, loop: 60}, );
+    },
+    popNormal(type) {
+      type.velocity({
+        scale: -.5,
+        opacity: 0,
+        translateZ: -70,
+        rotateZ: -20
+        }, {  duration: 500, loop: 60}, );
+    },
+    popMagic(type) {
+      type.velocity({
+        scale: 1.2,
+        opacity: .1,
+        translateZ: 20,
+        rotateZ: 20
+        }, { duration: 500, loop: 60}, );
     }
   }
 
