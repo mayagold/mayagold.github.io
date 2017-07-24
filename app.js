@@ -213,6 +213,24 @@ $(() => {
         $('body').css('background', 'url("https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
+            scale: 2,
+            rotateZ: 1800,
+            translate3d: 50
+          }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
+        $('.normal').velocity({
+          scale: 1,
+          rotateZ: 3600,
+          translate3d: 50
+        }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
+        $('.magic').velocity({
+          scale: 1.5,
+          rotateZ: 2520,
+          translate3d: 50
+        }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
+      } else if (round===4) {
+        $('body').css('background', 'url("https://media.giphy.com/media/126jxQSflEozPW/giphy.gif")');
+        $('body').css('background-size', 'cover');
+        $('.poisonous').velocity({
             scale: 1.5,
             translateX: -140
           }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
@@ -224,9 +242,8 @@ $(() => {
           scale: 1.5,
           translateX: -140
         }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-        // $('body').css('background-position', 'center');
-      } else if (round===4) {
-        $('body').css('background', 'url("https://media.giphy.com/media/126jxQSflEozPW/giphy.gif")');
+      } else if (round===5){
+        $('body').css('background', 'url("https://media.giphy.com/media/U3WiLFkGIS36M/giphy.gif")');
         $('body').css('background-size', 'cover');
         $('.poisonous').velocity({
             scale: 1.5,
@@ -243,25 +260,6 @@ $(() => {
           translateX: -50,
           translateY: 150
         }, {duration: 1000, loop: 30, delay: 0}).velocity('reverse');
-      } else if (round===5){
-        $('body').css('background', 'url("https://media.giphy.com/media/U3WiLFkGIS36M/giphy.gif")');
-        $('body').css('background-size', 'cover');
-        $('.poisonous').velocity({
-            scale: 2,
-            rotateZ: 1800,
-            translate3d: 50
-          }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
-        $('.normal').velocity({
-          scale: 1,
-          rotateZ: 3600,
-          translate3d: 50
-        }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
-        $('.magic').velocity({
-          scale: 1.5,
-          rotateZ: 2520,
-          translate3d: 50
-        }, {duration: 15000, loop: 1, delay: 0}).velocity('reverse');
-        // building
       } else if (round===6){
         $('body').css('background', 'url("https://media.giphy.com/media/26BkLPYsD1Byn8hgI/giphy.gif")');
         $('body').css('background-size', 'cover');
