@@ -1,6 +1,6 @@
 body {
   font-family: "Original Surfer", cursive;
-  background: radial-gradient(ellipse farthest-corner at 45px 45px , white 0%, grey 50%, black 95%);
+  background: black;
   animation-name: colorRotate;
   animation-duration: 15s;
   animation-iteration-count: 2;
