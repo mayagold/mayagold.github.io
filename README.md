@@ -15,8 +15,8 @@ July 2017
 * Technologies Used: HTML, CSS, JavaScript, jQuery, and Velocity.js
 * Hosted on github pages
 * Music:
-  "Cuckoo" - Tipper
-  "An-ten-nae" - Raindrops on Roses feat. Alice D
+  * "Cuckoo" - Tipper
+  * "Raindrops on Roses" - An-ten-nae feat. Alice D
 * Background graphics: giphy
 
 
