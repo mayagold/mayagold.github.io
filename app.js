@@ -1,13 +1,10 @@
 
-// console.log('test');
-// $
 
 // JQUERY WINDOW ONLOAD
 $(() => {
-// Declare score and time variables outside of any object
   let score = 5;
   let time = 30;
-// Event Handlers object
+  // Event Handlers object
   const eventHandlers = {
     // start game: when you click the Start or Start Over button
     startGame() {
@@ -32,7 +29,7 @@ $(() => {
         setUpRound();
       })
     },
-    // clicking on mushrooms -- changes the score based on their class
+    // click on mushrooms: changes the score based on their class, animates them
     clickShrooms() {
       $('img').on('click', (e) => {
         console.log(score);
@@ -41,28 +38,20 @@ $(() => {
           score--;
           $(e.currentTarget).css({'animation-name': 'vibrate', 'animation-duration': '.1s', 'animation-iteration-count': '20', 'opacity': '.2'
           });
-          // console.log('clicking');
           $('#show-power').text('Mr. Fun Guy says: That one was poisonous! Your points: ' + score );
-          // console.log('lose point');
-          // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'magic') || ($(e.currentTarget).attr('class') === 'magic velocity-animating')) {
           score++;
           $(e.currentTarget).css({ 'animation-name': 'spin', 'animation-duration': '10s', 'animation-iteration-count': '1', 'opacity': '.2'});
           $('#show-power').text('Mr. Fun Guy says: You found a magic mushroom! Your points: ' + score);
-          // console.log('win point');
-          // console.log(score);
         } else if (($(e.currentTarget).attr('class') === 'normal') || ($(e.currentTarget).attr('class') === 'normal velocity-animating')) {
           $(e.currentTarget).css('opacity', '0');
           $('#show-power').text('Mr. Fun Guy says: Keep trying... Your points: ' + score);
-          // console.log('no change');
-          // console.log(score);
         }
       });
     },
-    // when you click Keep Playing after winning a round
+    // click on next round button
     nextRound() {
       $('#next-button').on('click', () => {
-        // console.log('working');
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
@@ -70,10 +59,9 @@ $(() => {
         setUpRound();
       });
     },
-    // when you click Keep Playing after losing a round
+    // click on repeat round button
     repeatRound() {
       $('#repeat-button').on('click', () => {
-        // console.log('working');
         $('.modal').hide();
         $('.game-container').css('display', 'block');
         $('.mushroom-container').css('display', 'block');
@@ -81,6 +69,7 @@ $(() => {
         setUpRound();
       });
     },
+    // click on start over button
     restartGame() {
       score=5;
       $('#restart-button').on('click', () => {
@@ -91,6 +80,7 @@ $(() => {
         $('#restart-button').off();
       });
     },
+    // click on new game button
     newGame() {
       $('#new-game-button').on('click', () => {
         round.roundNumber=1;
@@ -104,7 +94,7 @@ $(() => {
       });
     },
   }
-// the game round object
+  // the game round object
   const round = {
     // round number can be updated
     roundNumber: 1,
@@ -119,7 +109,6 @@ $(() => {
         shroom.css('max-height', '80px');
         const left = (Math.random()*1000) + 'px';
         const top = (Math.random()*500) + 'px';
-        // console.log(top);
         shroom.css('margin-left', left);
         shroom.css('margin-top', top);
         $('.mushroom-container').append(shroom);
@@ -138,7 +127,6 @@ $(() => {
       time=30;
       const timer = setInterval( ()=> {
         time--
-        // console.log(time);
         $('h3').text(time);
         if (time===0) {
           clearInterval(timer);
@@ -161,6 +149,7 @@ $(() => {
       $('#modal-next-round').css('display', 'block');
       eventHandlers.nextRound();
     },
+    // animations for each round
     roundAnimation(round) {
       if (round===1){
         $('body').css('background', 'black');
@@ -282,9 +271,8 @@ $(() => {
     }
   }
 
-// the actual function that starts a new round
+  // the actual function that starts a new round
   const setUpRound = () => {
-    // $('#show-round').text('Round '+ round.roundNumber);
     round.clearBoard();
     round.generateShrooms(15);
     round.setTimer();
@@ -292,7 +280,7 @@ $(() => {
     eventHandlers.clickShrooms();
   }
 
-// check whether user can move on to the next round
+  // check whether user can move on to the next round
   const checkForWin = () => {
     if (score <= 0) {
       round.roundNumber=1;
