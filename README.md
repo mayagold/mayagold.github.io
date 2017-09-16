@@ -12,7 +12,7 @@ July 2017
 ********************************************************
 ********************************************************
 
-* Technologies Used: HTML, CSS, JavaScript, jQuery, and Velocity.js
+* Technologies Used: HTML, CSS, JavaScript, jQuery, Velocity.js
 * Hosted on github pages
 * Music:
   * "Cuckoo" - Tipper
@@ -35,7 +35,7 @@ Premise: Help a computer character, "Mr. Fun Guy,"  take a trip through outer sp
 ********************************************************
 ********************************************************
 
-Why did I choose to make this game: I wanted to play with CSS animations and jQuery animations. I felt fairly comfortable writing JS and jQuery code but less comfortable with CSS. My original idea was to make a game in which animated objects move across the page and you have to click on them to earn points. What could be more fun to click on than mushrooms bouncing around the page? 
+Why did I choose to make this game: I wanted to play with CSS animations and jQuery animations. I felt fairly comfortable writing JS and jQuery code but less comfortable with CSS. My original idea was to make a game in which animated objects move across the page and you have to click on them to earn points. What could be more fun to click on than mushrooms bouncing around the page?
 
 ********************************************************
 ********************************************************

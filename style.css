@@ -9,15 +9,14 @@ body {
 
 .modal {
   background: url('images/images-5.jpg');
-  border: 3px solid rgba(255,255,255,.8);
   animation: colorRotate 3s linear infinite;
   font-size: 2.2vw;
-  height: 600px;
-  width: 90%;
-  margin: 30px;
+  height: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
   text-align: center;
   color: white;
-  padding: 20px;
 }
 
 ul {
